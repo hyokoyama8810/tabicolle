@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tabicolle</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo"><a href="">tabicolle</a></div>
+      <ul>
+        <li><a href="">新規登録</a></li>
+        <li><a href="">ログイン</a></li>
+      </ul>
+    </header>
+    <%= yield %>
+    <footer>
+      <ul>
+        <li><a href="">このアプリについて</a></li>
+        <li><a href="">利用規約</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

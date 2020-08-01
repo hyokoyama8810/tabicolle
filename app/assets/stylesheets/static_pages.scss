@@ -1,0 +1,20 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+main.static_pages {
+  text-align: center;
+  height: 700px;
+  position: relative;
+  .title {
+    font-size: 3rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    .lead {
+      font-size: 1.3rem;
+    }
+  }
+}

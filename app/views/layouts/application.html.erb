@@ -11,7 +11,8 @@
 
   <body>
     <header>
-      <div class="logo"><a href="">tabicolle</a></div>
+      <div class="logo"><%= link_to "tabicolle", root_path %></div>
+
       <ul>
         <li><a href="">新規登録</a></li>
         <li><a href="">ログイン</a></li>
@@ -20,7 +21,7 @@
     <%= yield %>
     <footer>
       <ul>
-        <li><a href="">このアプリについて</a></li>
+        <li><%= link_to "このアプリについて", about_path %></li>
         <li><a href="">利用規約</a></li>
       </ul>
     </footer>

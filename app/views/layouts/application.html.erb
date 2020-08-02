@@ -11,11 +11,12 @@
 
   <body>
     <header>
-      <div class="logo"><%= link_to "Tabicolle", root_path %></div>
-
+      <div class="logo">
+        <%= link_to "Tabicolle", root_path %>
+      </div>
       <ul>
-        <li><a href="">新規登録</a></li>
-        <li><a href="">ログイン</a></li>
+        <li><%= link_to "新規登録", "#" %></li>
+        <li><%= link_to "ログイン", "#" %></li>
       </ul>
     </header>
     <main>
@@ -24,7 +25,7 @@
     <footer>
       <ul>
         <li><%= link_to "このアプリについて", about_path %></li>
-        <li><a href="">利用規約</a></li>
+        <li><%= link_to "利用規約", '#' %></li>
       </ul>
     </footer>
   </body>

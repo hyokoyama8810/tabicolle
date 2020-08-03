@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Tabicolle</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <div class="logo">
+        <div class="logo ">
         <%= link_to "Tabicolle", root_path %>
       </div>
       <ul>

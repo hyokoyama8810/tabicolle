@@ -11,15 +11,23 @@
 
   <body>
     <header>
-        <div class="logo ">
+      <div class="logo ">
         <%= link_to "Tabicolle", root_path %>
       </div>
       <ul>
-        <li><%= link_to "新規登録", "#" %></li>
-        <li><%= link_to "ログイン", "#" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.username, pages_show_path %></li>
+          <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
       </ul>
     </header>
     <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
     <footer>

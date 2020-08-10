@@ -1,3 +1,35 @@
+.devise {
+  padding: 1rem 25%;
+  h2 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  form {
+    .field {
+      padding-bottom: 1.5rem;
+      input {
+        width: 100%;
+      }
+    }
+    .actions {
+      text-align: center;
+    }
+  }
+  .links {
+    padding: 2rem 0 1rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .button_to {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
 .registrations {
   h2 {
     font-size: 2rem;
@@ -20,3 +52,30 @@
     padding: 1rem 25%;
   }
 }
+
+// .sessions {
+//   h2 {
+//     font-size: 2rem;
+//     padding: 1rem 0;
+//     text-align: center;
+//   }
+//   form {
+//     padding: 1rem 25%;
+//     .field {
+//       padding-bottom: 1.5rem;
+//       input {
+//         width: 100%;
+//       }
+//     }
+//     .remember_me {
+//       padding: 0.5rem 0;
+//     }
+//     .actions {
+//       text-align: center;
+//       padding: 2rem;
+//     }
+//   }
+//   .links {
+//     padding: 1rem 25%;
+//   }
+// }

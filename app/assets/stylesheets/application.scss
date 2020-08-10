@@ -22,6 +22,13 @@
   margin: 0;
 }
 
+html {
+  font-size: 100%; /*標準サイズ*/
+}
+html.small {
+  font-size: 80%; /*小サイズ*/
+}
+
 body {
   max-width: 1200px;
   width: 100%;

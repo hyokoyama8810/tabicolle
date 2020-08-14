@@ -6,12 +6,12 @@ RSpec.describe User, type: :model do
   end
 
   describe 'バリデーション' do
-    it 'usernameとemail,passwordの値が設定されていれば、OK' do
+    it 'nameとemail,passwordの値が設定されていれば、OK' do
       expect(@user.valid?).to eq(true)
     end
 
-    it 'usernameが空だとNG' do
-      @user.username = ''
+    it 'nameが空だとNG' do
+      @user.name = ''
       expect(@user.valid?).to eq(false)
     end
 

@@ -20,13 +20,13 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
 
-    describe 'パスワードが空あるいは5文字以内だとNG' do
+    describe 'パスワードが空あるいは6文字未満だとNG' do
       it 'パスワードが空だとNG' do
         @user.password = ''
         @user.password_confirmation = ''
         expect(@user.valid?).to eq(false)
       end
-      it 'パスワードが5文字以内だとNG' do
+      it 'パスワードが5文字未満だとNG' do
         @user.password = 'mukou'
         @user.password_confirmation = 'mukou'
         expect(@user.valid?).to eq(false)

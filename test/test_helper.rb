@@ -4,7 +4,11 @@ require 'rails/test_help'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
-
+module SignInHelper
+  def sign_in_as(user)
+    post sign_in_url(email: user.email, password: user.password, name: user.name)
+  end
+end
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -14,4 +18,5 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include SignInHelper
 end

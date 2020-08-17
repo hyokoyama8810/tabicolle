@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable#, :omniauthable, omniauth_providers:[:twitter]
 
+  validates :name,  presence: true
 end

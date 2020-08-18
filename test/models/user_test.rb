@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
-  # バリデーションテスト
+  # バリデーションテスト======================================
   ## name
   test "name should be present" do
     @user.name= "   "
@@ -51,6 +51,15 @@ class UserTest < ActiveSupport::TestCase
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "pw123"
     assert_not @user.valid?
+  end
+  #=========================================================
+
+  test "associated posts should be destroyed" do
+    @user.save
+    @user.posts.create!(content: "静岡に行ってきた!!")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
   end
 
 end

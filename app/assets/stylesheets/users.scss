@@ -1,3 +1,62 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.users {
+  .show {
+    .profile_wrap {
+      .icon_wrap {
+        text-align: center;
+        .gravatar {
+          border-radius: 50%;
+          height: 80px;
+          width: 80px;
+        }
+        .name {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+      .relationship_wrap {
+        text-align: center;
+      }
+    }
+    .posts_wrap {
+      .post {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: solid 1px #000;
+        border-radius: 5px;
+        .icon_wrap {
+          display: flex;
+          padding-bottom: 0.5rem;
+          align-items: center;
+          .icon {
+            width: auto;
+            padding-right: 1rem;
+            .gravatar {
+              border-radius: 50%;
+              height: 60px;
+              width: 60px;
+            }
+          }
+          .name {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .tag_wrap {
+      padding: 1rem;
+      h1 {
+        padding-bottom: 0.2rem;
+        font-size: 1.2rem;
+      }
+      .area_wrap {
+        padding-bottom: 1rem;
+      }
+      .genre_wrap {
+        padding-bottom: 1rem;
+      }
+      .season_wrap {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}

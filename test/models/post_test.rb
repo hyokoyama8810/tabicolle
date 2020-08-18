@@ -31,12 +31,6 @@ class PostTest < ActiveSupport::TestCase
     assert_equal posts(:most_recent), Post.first
   end
 
-  test "associated posts should be destroyed" do
-    @user.save
-    # @user.posts.create!(content: "静岡に行ってきた!!")
-    assert_difference 'Post.count', -1 do
-      @user.destroy
-    end
-  end
+
 
 end

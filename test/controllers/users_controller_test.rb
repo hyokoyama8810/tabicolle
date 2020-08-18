@@ -59,11 +59,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   # 正しいユーザーとしてログインした場合
-  # test "should redirect edit when logged in as correct user" do
-  #   login_as(@user, scope: :user)
-  #   get edit_user_registration_path(@user)
-  #   assert_templete edit_user_registration_path(@user)
-  # end
   test "should redirect update when logged in as correct user" do
     login_as(@user, scope: :user)
     patch user_registration_path(@user), params: { user: { name:  "new",

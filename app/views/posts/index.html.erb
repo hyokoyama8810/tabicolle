@@ -1,0 +1,57 @@
+<% provide(:title, "投稿一覧") %>
+
+<div class="posts">
+  <div class="index row">
+
+    <!-- レイアウトの余白の都合上 [todo]あとからなにか加える可能性がある｡ -->
+    <div class="col-md-3">
+    </div>
+
+    <div class="posts_wrap col-md-7">
+    <% @posts.each do |post|%>
+      <div class="post">
+        <div class="icon_wrap">
+          <div class="icon">
+            <%= gravatar_for post.user %>
+          </div>
+          <div class="name">
+            <%= post.user.name %>
+          </div>
+        </div>
+        <div class="content">
+          <%= link_to post.content, "/posts/#{post.id}" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+
+    <div class="tag_wrap col-md-2">
+      <div class="area_wrap">
+        <h1>エリア</h1>
+        <ul>
+          <li><%= link_to "北海道", "#" %></li>
+          <li><%= link_to "東北", "#" %></li>
+          <li><%= link_to "関東", "#" %></li>
+        </ul>
+      </div>
+      <div class="genre_wrap">
+        <h1>ジャンル</h1>
+          <ul>
+            <li><%= link_to "アクティビティ", "#" %></li>
+            <li><%= link_to "グルメ", "#" %></li>
+            <li><%= link_to "温泉", "#" %></li>
+          </ul>
+      </div>
+      <div class="season_wrap">
+        <h1>シーズン</h1>
+          <ul>
+            <li><%= link_to "春", "#" %></li>
+            <li><%= link_to "夏", "#" %></li>
+            <li><%= link_to "秋", "#" %></li>
+          </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

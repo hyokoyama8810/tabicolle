@@ -33,9 +33,13 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 
   a {
     text-decoration: none;
+  }
+  ul {
+    list-style: none;
   }
 
   header {
@@ -57,6 +61,17 @@ body {
   }
 
   main {
+    .notice {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .alert {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #f00;
+    }
     h1 {
       font-size: 2rem;
       padding: 2rem 0;

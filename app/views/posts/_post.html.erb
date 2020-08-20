@@ -1,8 +1,17 @@
-<li class="post" id="post-<%= post.id %>">
+
+<div class="post">
   <div class="icon_wrap">
-    <p class="icon"><%= link_to gravatar_for(post.user, size: 50), post.user %></p>
-    <p class="name"><%= link_to post.user.name, post.user %></p>
+    <div class="icon">
+      <%= link_to gravatar_for(post.user), post.user %>
+    </div>
+    <div class="name">
+      <%= link_to post.user.name, post.user %>
+    </div>
   </div>
-  <span class="content"><%= post.content %></span>
-  <span class="timestamp">投稿 <%= time_ago_in_words(post.created_at) %> 前</span>
-</li>
+  <div class="content">
+    <%= link_to post.content, "/posts/#{post.id}" %>
+  </div>
+  <div class="updated_at">
+    <%= post.updated_at.to_s(:datetime_jp) %>
+  </div>
+</div>

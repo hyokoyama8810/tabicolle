@@ -8,21 +8,10 @@
     </div>
 
     <div class="posts_wrap col-md-7">
-    <% @posts.each do |post|%>
-      <div class="post">
-        <div class="icon_wrap">
-          <div class="icon">
-            <%= gravatar_for post.user %>
-          </div>
-          <div class="name">
-            <%= post.user.name %>
-          </div>
-        </div>
-        <div class="content">
-          <%= link_to post.content, "/posts/#{post.id}" %>
-        </div>
+      <%= render @posts %>
+      <div class="paginate_wrap">
+        <%= will_paginate @posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
       </div>
-    <% end %>
     </div>
 
     <%= render 'shared/sidebar' %>

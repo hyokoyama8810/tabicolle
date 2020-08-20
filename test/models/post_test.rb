@@ -18,18 +18,22 @@ class PostTest < ActiveSupport::TestCase
     @post.user_id = nil
     assert_not @post.valid?
   end
+  # [Why] postのuser_idとuserのidが関連付けられていることを確かめるため｡
+  test "user id should match id of @user" do
+    assert_equal @post.user_id, @user.id
+  end
 
   ## content
   test "content should be present" do
     @post.content = "   "
     assert_not @post.valid?
   end
-
   #====================================================
 
   test "order should be most recent first" do
     assert_equal posts(:most_recent), Post.first
   end
+
 
 
 

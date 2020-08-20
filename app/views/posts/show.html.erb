@@ -1,28 +1,31 @@
-<% provide(:title, "投稿一覧") %>
+投稿のID: <%= @post.id %>
+
+<% provide(:title,  @post.user.name + "さんの投稿" ) %>
 
 <div class="posts">
-  <div class="index row">
+  <div class="show row">
 
     <!-- レイアウトの余白の都合上で col-md-3 を配置 [todo]あとからなにか加える可能性がある｡ -->
     <div class="col-md-3">
     </div>
 
-    <div class="posts_wrap col-md-7">
-    <% @posts.each do |post|%>
+    <div class="post_wrap col-md-7">
       <div class="post">
         <div class="icon_wrap">
           <div class="icon">
-            <%= gravatar_for post.user %>
+            <%= gravatar_for @post.user %>
           </div>
           <div class="name">
-            <%= post.user.name %>
+            <%= @post.user.name %>
           </div>
         </div>
         <div class="content">
-          <%= link_to post.content, "/posts/#{post.id}" %>
+          <%= @post.content %>
+        </div>
+        <div class="updated_at">
+          <%= @post.updated_at.to_s(:datetime_jp) %>
         </div>
       </div>
-    <% end %>
     </div>
 
 

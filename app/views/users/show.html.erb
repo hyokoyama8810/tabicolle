@@ -42,32 +42,7 @@
       </div>
     </div>
 
-    <div class="tag_wrap col-md-2">
-      <div class="area_wrap">
-        <h1>エリア</h1>
-        <ul>
-          <li><%= link_to "北海道", "#" %></li>
-          <li><%= link_to "東北", "#" %></li>
-          <li><%= link_to "関東", "#" %></li>
-        </ul>
-      </div>
-      <div class="genre_wrap">
-        <h1>ジャンル</h1>
-          <ul>
-            <li><%= link_to "アクティビティ", "#" %></li>
-            <li><%= link_to "グルメ", "#" %></li>
-            <li><%= link_to "温泉", "#" %></li>
-          </ul>
-      </div>
-      <div class="season_wrap">
-        <h1>シーズン</h1>
-          <ul>
-            <li><%= link_to "春", "#" %></li>
-            <li><%= link_to "夏", "#" %></li>
-            <li><%= link_to "秋", "#" %></li>
-          </ul>
-      </div>
-    </div>
+    <%= render 'shared/sidebar' %>
 
   </div>
 </div>

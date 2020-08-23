@@ -17,3 +17,10 @@ most_recent:
   content: "金沢のひがし茶屋街にいるよ!!"
   created_at: <%= Time.zone.now %>
   user: alice
+
+<% 20.times do |n| %>
+post_<%= n %>:
+  content: <%= Faker::Address.state + "の" + Faker::Address.city + "に行ってきたよ!!" %>
+  created_at: <%= 42.days.ago %>
+  user: alice
+<% end %>

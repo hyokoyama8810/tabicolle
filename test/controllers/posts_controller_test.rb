@@ -9,4 +9,5 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
 
+
 end

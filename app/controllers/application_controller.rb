@@ -3,9 +3,16 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # ログイン後のリダイレクト先を指定
-  def after_sign_in_path_for(resource)
-    user_path(resource.id)
+  def after_sign_in_path_for (resource)
+    user_path(resource)
   end
+
+  # ログアウト後に遷移するpathを設定
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
+
+
 
   protected
     # 新規登録､更新をする際に登録するパラメーターを増やす

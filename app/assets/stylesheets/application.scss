@@ -120,7 +120,11 @@ body {
   .content {
     padding: 0 0 1rem 5rem;
   }
-  .updated_at {
+  .bottom_wrap {
     text-align: right;
+    .item {
+      display: inline;
+      padding-left: 0.5rem;
+    }
   }
 }

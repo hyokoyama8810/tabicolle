@@ -11,7 +11,14 @@
   <div class="content">
     <%= link_to post.content, "/posts/#{post.id}" %>
   </div>
-  <div class="updated_at">
-    <%= post.updated_at.to_s(:datetime_jp) %>
+  <div class="bottom_wrap">
+    <% if current_user?(post.user) %>
+    <div class="item">
+      <%= link_to "削除", post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" } %>
+    </div>
+    <% end %>
+    <div class="item">
+      <%= post.updated_at.to_s(:datetime_jp) %>
+    </div>
   </div>
 </div>

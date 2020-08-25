@@ -35,6 +35,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_registration_path(@user)
     end
     assert_response 401
+    # assert_redirected_to new_user_session_url
+
   end
 
   # 異なるユーザーとしてログインした場合

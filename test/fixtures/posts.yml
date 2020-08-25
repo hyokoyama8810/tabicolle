@@ -24,3 +24,15 @@ post_<%= n %>:
   created_at: <%= 42.days.ago %>
   user: alice
 <% end %>
+
+
+Nagano:
+  content: "長野のビーナスラインに行ってきたよ!!"
+  created_at: <%= 20.minutes.ago %>
+  user: bob
+
+Kusatsu:
+  content: "群馬の草津温泉に行ってきたよ!!"
+  created_at: <%= 30.minutes.ago %>
+  user: bob
+

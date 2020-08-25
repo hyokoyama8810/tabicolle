@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: [:destroy]
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
@@ -22,7 +22,6 @@ class PostsController < ApplicationController
     else
       render 'posts/new'
     end
-
   end
 
   def destroy

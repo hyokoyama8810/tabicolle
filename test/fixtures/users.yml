@@ -16,4 +16,4 @@ bob:
   name: Bob
   email: bob@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password2') %>
-  # confirmed_at: <%= Time.now - 200 %>
+  # confirmed_at: <%= Time.now - 100 %>

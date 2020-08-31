@@ -23,7 +23,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+gem 'active_storage_validations'
+
+# Japanese localization of rails
+gem 'rails-i18n'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -34,10 +39,16 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-twitter'
 
+# paginate
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
 end
 
 group :development do

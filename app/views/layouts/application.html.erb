@@ -16,12 +16,15 @@
       </div>
       <ul>
         <% if user_signed_in? %>
-          <%# <li><%= link_to current_user.name, pages_show_path %>
+          <li><%= link_to 'マイページ', user_path(current_user) %></li>
           <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          <li><%= link_to '新規投稿', new_post_path %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "新規登録", new_user_registration_path %></li>
           <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "このアプリについて", about_path %></li>
+          <li><%= link_to "利用規約", '#' %></li>
         <% end %>
       </ul>
     </header>
@@ -30,11 +33,5 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
-    <footer>
-      <ul>
-        <li><%= link_to "このアプリについて", about_path %></li>
-        <li><%= link_to "利用規約", '#' %></li>
-      </ul>
-    </footer>
   </body>
 </html>

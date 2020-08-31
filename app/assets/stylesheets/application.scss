@@ -29,13 +29,19 @@ html.small {
   font-size: 80%; /*小サイズ*/
 }
 
+// 全体テンプレート
 body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 
   a {
     text-decoration: none;
+    color: #000;
+  }
+  ul {
+    list-style: none;
   }
 
   header {
@@ -57,6 +63,17 @@ body {
   }
 
   main {
+    .notice {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .alert {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #f00;
+    }
     h1 {
       font-size: 2rem;
       padding: 2rem 0;
@@ -72,6 +89,45 @@ body {
       li {
         margin-right: 1rem;
       }
+    }
+  }
+}
+
+// 部分テンプレート
+//// _post.html.erb
+.post {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: solid 1px #000;
+  border-radius: 5px;
+  .icon_wrap {
+    display: flex;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    .icon {
+      width: auto;
+      padding-right: 1rem;
+      .gravatar {
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+    .name {
+      font-size: 1.2rem;
+    }
+  }
+  .content {
+    padding: 0 0 1rem 5rem;
+    img {
+      width: 100%;
+    }
+  }
+  .bottom_wrap {
+    text-align: right;
+    .item {
+      display: inline;
+      padding-left: 0.5rem;
     }
   }
 }

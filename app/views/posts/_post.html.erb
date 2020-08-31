@@ -1,0 +1,25 @@
+
+<div class="post">
+  <div class="icon_wrap">
+    <div class="icon">
+      <%= link_to gravatar_for(post.user), post.user %>
+    </div>
+    <div class="name">
+      <%= link_to post.user.name, post.user %>
+    </div>
+  </div>
+  <div class="content">
+    <p><%= link_to post.content, "/posts/#{post.id}" %></p>
+    <%= image_tag post.image if post.image.attached? %>
+  </div>
+  <div class="bottom_wrap">
+    <% if current_user?(post.user) %>
+    <div class="item">
+      <%= link_to "削除", post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" } %>
+    </div>
+    <% end %>
+    <div class="item">
+      <%= post.updated_at.to_s(:datetime_jp) %>
+    </div>
+  </div>
+</div>

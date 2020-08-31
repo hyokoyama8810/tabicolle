@@ -2,6 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
+  # include Devise::TestHelpers
+  include Devise::Test::IntegrationHelpers
 
   def setup
     @user = users(:alice)
@@ -33,11 +35,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_registration_path(@user)
     end
     assert_response 401
+    # assert_redirected_to new_user_session_url
+
   end
 
   # 異なるユーザーとしてログインした場合
   test "should redirect edit when logged in as wrong user" do
-    login_as(@other_user, scope: :user)
+    # login_as(@other_user, scope: :user)
+    login_as(@other_user)
     get edit_user_registration_path(@user)
     assert_not flash.empty?
     assert_redirected_to new_user_session_url
@@ -50,7 +55,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_url
   end
   test "should redirect destroy when logged in as wrong user" do
-    login_as(@other_user, scope: :user)
+    login_as(@other_user)
     assert_no_difference 'User.count' do
       delete user_registration_path(@user)
     end

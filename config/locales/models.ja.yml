@@ -1,9 +1,21 @@
 ja:
   activerecord:
+    models:
+      user: ユーザー
+      post: 投稿
     attributes:
       user:
+        id: ユーザーID
+        name: ユーザー名
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
+        current_password: 現在のパスワード
         remember_me: 次回から自動的にログイン
-        name: ユーザー名
+        created_at: アカウント作成日時
+        updated_at: アカウント更新日時
+      post:
+        content: 投稿内容
+        user_id: ユーザーID
+        created_at: 投稿作成日時
+        updated_at: 投稿更新日時

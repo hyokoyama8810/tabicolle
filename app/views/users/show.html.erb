@@ -1,2 +1,27 @@
-<p>MyPage <%= @user.id %></p>
+<% provide(:title, @user.name) %>
 
+<div class="users">
+  <div class="show row">
+
+    <div class="profile_wrap col-md-3">
+      <div class="icon_wrap">
+        <p class="name"><%= @user.name %></p>
+        <p class="icon"><%= gravatar_for @user %></p>
+      </div>
+      <div class="relationship_wrap">
+        <p class="following">フォロー n</p>
+        <p class="followed">フォロワー m</p>
+      </div>
+    </div>
+    <div class="posts_wrap col-md-7">
+      <%= render @posts %>
+      <div class="paginate_wrap">
+        <%= will_paginate @posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
+      </div>
+    </div>
+
+
+    <%= render 'shared/sidebar' %>
+
+  </div>
+</div>

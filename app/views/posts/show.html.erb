@@ -1,0 +1,44 @@
+<% provide(:title,  @post.user.name + "さんの投稿" ) %>
+
+<div class="posts">
+  <div class="show row">
+
+    <!-- レイアウトの余白の都合上で col-md-3 を配置 [todo]あとからなにか加える可能性がある｡ -->
+    <div class="col-md-3">
+    </div>
+
+    <div class="post_wrap col-md-7">
+      <div class="post">
+        <div class="icon_wrap">
+          <div class="icon">
+            <%= link_to gravatar_for(@post.user), @post.user %>
+          </div>
+          <div class="name">
+            <%= link_to @post.user.name, @post.user %>
+          </div>
+        </div>
+        <div class="content">
+          <%= @post.content %>
+          <%= image_tag @post.image if @post.image.attached? %>
+        </div>
+        <div class="bottom_wrap">
+<!--
+[todo] 投稿詳細ページからのdestroyリクエスト後は､前ページにリダイレクトするのではなく､一覧ページに移動するようにしたい｡
+          <% if current_user?(@post.user) %>
+          <div class="item">
+            <%= link_to "削除", @post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" } %>
+          </div>
+          <% end %>
+-->
+          <div class="item">
+            <%= @post.updated_at.to_s(:datetime_jp) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <%= render 'shared/sidebar' %>
+
+  </div>
+</div>

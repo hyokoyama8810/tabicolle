@@ -23,7 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+gem 'active_storage_validations'
 
 # Japanese localization of rails
 gem 'rails-i18n'
@@ -40,6 +42,7 @@ gem 'omniauth-twitter'
 # paginate
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
 
 
 group :development, :test do

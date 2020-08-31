@@ -19,10 +19,22 @@
         </div>
         <div class="content">
           <%= @post.content %>
+          <%= image_tag @post.image if @post.image.attached? %>
         </div>
-        <div class="updated_at">
-          <%= @post.updated_at.to_s(:datetime_jp) %>
+        <div class="bottom_wrap">
+<!--
+[todo] 投稿詳細ページからのdestroyリクエスト後は､前ページにリダイレクトするのではなく､一覧ページに移動するようにしたい｡
+          <% if current_user?(@post.user) %>
+          <div class="item">
+            <%= link_to "削除", @post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" } %>
+          </div>
+          <% end %>
+-->
+          <div class="item">
+            <%= @post.updated_at.to_s(:datetime_jp) %>
+          </div>
         </div>
+
       </div>
     </div>
 

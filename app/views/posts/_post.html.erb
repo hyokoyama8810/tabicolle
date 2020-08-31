@@ -9,7 +9,8 @@
     </div>
   </div>
   <div class="content">
-    <%= link_to post.content, "/posts/#{post.id}" %>
+    <p><%= link_to post.content, "/posts/#{post.id}" %></p>
+    <%= image_tag post.image if post.image.attached? %>
   </div>
   <div class="bottom_wrap">
     <% if current_user?(post.user) %>

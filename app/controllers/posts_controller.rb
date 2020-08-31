@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.image.attach(params[:post][:image])
     if @post.save
       flash[:notice] = "投稿が作成されました｡"
       redirect_to posts_url
@@ -28,12 +29,14 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "投稿を削除しました"
     redirect_to request.referrer || root_url
+    # [todo] 投稿詳細ページからのdestroyリクエスト後は､前ページにリダイレクトするのではなく､一覧ページに移動するようにしたい｡
+
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :image)
     end
 
     def correct_user

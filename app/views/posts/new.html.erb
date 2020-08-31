@@ -18,7 +18,11 @@
         <div class="actions">
           <%= f.submit "投稿", class: "btn" %>
         </div>
+        <span class="image">
+          <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png"  %>
+        </span>
       <% end %>
+
     </div>
 
     <%= render 'shared/sidebar' %>

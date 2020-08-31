@@ -14,4 +14,8 @@
   .season_wrap {
     padding-bottom: 1rem;
   }
+  @media screen and (max-width: 991px) {
+    display: flex;
+    justify-content: space-around;
+  }
 }

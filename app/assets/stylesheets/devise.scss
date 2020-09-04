@@ -5,6 +5,15 @@
     padding: 1rem 0;
     text-align: center;
   }
+  .btn {
+    background: #0f7d3b;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      opacity: 0.6;
+      color: #ffffff;
+    }
+  }
   form {
     #error_explanation {
       h2 {

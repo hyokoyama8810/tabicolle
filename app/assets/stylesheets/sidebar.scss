@@ -1,12 +1,16 @@
 .tag_wrap {
   padding: 0 1rem;
   h1 {
-    padding: 0;
+    padding: 0.5rem;
     margin: 0 0 1rem;
     font-size: 1.2rem;
+    background-color: #c2decc;
+    color: #494949; /*文字色*/
+    border-left: solid 5px #0f7d3b; /*左線（実線 太さ 色）*/
   }
   .area_wrap {
     padding-bottom: 1rem;
+    // background-color: #e0e0e0;
   }
   .genre_wrap {
     padding-bottom: 1rem;

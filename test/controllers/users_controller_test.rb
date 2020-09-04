@@ -16,7 +16,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to new_user_session_url
   end
-  ## [todo] ログインページにリダイレクトされるところまでテストしようとすると､REDになる
+  ## [todo] deviseのヘルパーメソッド authenticate_user! は通過できない場合､ログでは 401 を返しており､遍移先のurlは返さない?? → ログイン画面に遍移したかまでテストできない
   test "should redirect edit when not logged in" do
     get edit_user_registration_path(@user)
     assert_response 401

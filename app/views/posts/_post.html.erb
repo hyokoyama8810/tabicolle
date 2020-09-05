@@ -11,6 +11,9 @@
   <div class="content">
     <p><%= link_to post.content, "/posts/#{post.id}" %></p>
     <%= image_tag post.image if post.image.attached? %>
+    <p><%= post.area %></p>
+    <p><%= post.genre %></p>
+    <p><%= post.season %></p>
   </div>
   <div class="bottom_wrap">
     <% if current_user?(post.user) %>

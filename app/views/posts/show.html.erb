@@ -20,6 +20,11 @@
         <div class="content">
           <%= @post.content %>
           <%= image_tag @post.image if @post.image.attached? %>
+          <ul class="tag_wrap">
+          <li><%= link_to @post.area, "#" %></li>
+          <li><%= link_to @post.genre, "#" %></li>
+          <li><%= link_to @post.season, "#" %></li>
+        </ul>
         </div>
         <div class="bottom_wrap">
 <!--

@@ -19,3 +19,6 @@ ja:
         user_id: ユーザーID
         created_at: 投稿作成日時
         updated_at: 投稿更新日時
+        area: エリア
+        genre: ジャンル
+        season: シーズン

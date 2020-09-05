@@ -4,7 +4,10 @@ class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:alice)
     # このコードは慣習的に正しくない
-    @post = @user.posts.build(content: "静岡県に行ってきた!")
+    @post = @user.posts.build(content: "静岡でサッカー見に行ってきた!!",
+                              area:    "東海",
+                              genre:   "スポーツ観戦",
+                              season:  "夏")
   end
 
   test "should be valid" do
@@ -28,11 +31,30 @@ class PostTest < ActiveSupport::TestCase
     @post.content = "   "
     assert_not @post.valid?
   end
+
+  ##area
+  test "area should be present" do
+    @post.area = "   "
+    assert_not @post.valid?
+  end
+
+  ##genre
+  test "genre should be present" do
+    @post.genre = "   "
+    assert_not @post.valid?
+  end
+
+  ##season
+  test "season should be present" do
+    @post.season = "   "
+    assert_not @post.valid?
+  end
   #====================================================
 
   test "order should be most recent first" do
     assert_equal posts(:most_recent), Post.first
   end
+
 
 
 

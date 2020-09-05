@@ -71,13 +71,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
   end
   # [todo] ↓のテストがパスしない､ User.countが -1 にならない
-  # test "should redirect destroy when logged in as correct user" do
-  #   login_as(@user, scope: :user)
-  #   assert_difference 'User.count', -1 do
-  #     delete user_registration_path(@user)
-  #   end
-  #   assert_not flash.empty?
-  # end
+  test "should redirect destroy when logged in as correct user" do
+    login_as(@user, scope: :user)
+    assert_difference 'User.count', -1 do
+      delete user_registration_path(@user)
+    end
+    assert_not flash.empty?
+  end
 
 
 end

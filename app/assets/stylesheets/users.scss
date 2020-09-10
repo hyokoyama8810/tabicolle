@@ -15,22 +15,29 @@
       }
       .relationship_wrap {
         text-align: center;
-        .unfollow {
-          padding: 4px;
-          background: #0f7d3b;
-          color: #fff;
-          border-radius: 4px;
-          &:hover {
-            background: #c11f1f;
+        .unfollow_wrap {
+          margin: 1rem 0;
+          .unfollow {
+            padding: 4px;
+            background: #0f7d3b;
+            color: #fff;
+            border-radius: 4px;
+            &:hover {
+              background: #c11f1f;
+            }
           }
         }
-        .follow {
-          padding: 4px;
-          color: #0f7d3b;
-          border-radius: 4px;
-          border: 2px solid #0f7d3b;
-          &:hover {
-            opacity: 0.6;
+        .follow_wrap {
+          margin: 1rem 0;
+          .follow {
+            padding: 4px;
+            margin: 0.5rem 0;
+            color: #0f7d3b;
+            border-radius: 4px;
+            border: 2px solid #0f7d3b;
+            &:hover {
+              opacity: 0.6;
+            }
           }
         }
       }

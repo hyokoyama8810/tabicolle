@@ -13,9 +13,9 @@
         <p class="followed"><%= "フォロワー #{@user.followed.count}" %></p>
         <% unless @user == current_user %>
           <% if current_user.following?(@user) %>
-            <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
+          <p><%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST, class: "unfollow" %></p>
           <% else %>
-            <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+          <p><%= link_to 'フォローする', follow_path(@user.id), method: :POST, class: "follow" %></p>
           <% end %>
         <% end %>
       </div>

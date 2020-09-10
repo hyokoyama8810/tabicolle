@@ -9,8 +9,15 @@
         <p class="icon"><%= gravatar_for @user %></p>
       </div>
       <div class="relationship_wrap">
-        <p class="following">フォロー n</p>
-        <p class="followed">フォロワー m</p>
+        <p class="following"><%= "フォロー #{@user.follower.count}" %></p>
+        <p class="followed"><%= "フォロワー #{@user.followed.count}" %></p>
+        <% unless @user == current_user %>
+          <% if current_user.following?(@user) %>
+            <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
+          <% else %>
+            <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="posts_wrap col-md-7">

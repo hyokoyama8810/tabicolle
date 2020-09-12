@@ -65,4 +65,16 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  # [todo]RED フォローされない
+  # test "should follow and unfollow a user" do
+  #   alice = users(:alice)
+  #   bob  = users(:bob)
+  #   assert_not alice.following?(bob)
+  #   alice.follow(bob)
+  #   assert alice.following?(bob)
+  #   assert bob.followers.include?(alice)
+  #   alice.unfollow(bob)
+  #   assert_not alice.following?(bob)
+  # end
+
 end

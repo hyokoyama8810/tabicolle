@@ -42,6 +42,9 @@ gem 'omniauth-twitter'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+# tag
+gem 'acts-as-taggable-on', '~> 6.0'
+
 
 
 group :development, :test do

@@ -58,6 +58,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts-as-taggable-on (6.5.0)
+      activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
@@ -287,6 +289,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations
+  acts-as-taggable-on (~> 6.0)
   bootsnap (>= 1.4.2)
   bootstrap-sass
   bootstrap-will_paginate

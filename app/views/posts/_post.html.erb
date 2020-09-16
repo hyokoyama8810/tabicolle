@@ -15,6 +15,9 @@
       <li><%= link_to post.area, "#" %></li>
       <li><%= link_to post.genre, "#" %></li>
       <li><%= link_to post.season, "#" %></li>
+      <% post.tag_list.each do |tag| %>
+        <li><%= tag %></li>
+      <% end %>
     </ul>
   </div>
   <div class="bottom_wrap">

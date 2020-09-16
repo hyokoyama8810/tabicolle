@@ -1,6 +1,18 @@
 .posts {
   .index {
     .posts_wrap {
+      .tag_search_results {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        .tagword {
+          font-size: 1.4rem;
+          background-color: #0f7d3b;
+          border-radius: 4px;
+          padding: 4px;
+          margin-right: 1rem;
+          color: #fff;
+        }
+      }
       .paginate_wrap {
         text-align: center;
         .pagination {

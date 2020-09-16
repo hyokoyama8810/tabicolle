@@ -4,6 +4,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
+    #タグ絞り込み
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)
+    end
+
   end
 
   def show

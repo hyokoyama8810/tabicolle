@@ -36,7 +36,7 @@
                                { class: 'form-control' , required: true }  %>
         </div>
         <div class="field">
-          <%= f.label :tag_list, "タグをカンマ区切りで入力" %><br />
+          <%= f.label :tag_list, "タグをカンマ( , )区切りで入力" %><br />
           <%= text_field_tag 'post[tag_list]', @post.tag_list.join(","), class: "form-control" %>
         </div>
         <div class="field">

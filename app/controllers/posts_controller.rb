@@ -7,6 +7,12 @@ class PostsController < ApplicationController
     #タグ絞り込み
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:area]
+      @posts = Post.where(area: "#{params[:area]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:genre]
+      @posts = Post.where(genre: "#{params[:genre]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:season]
+      @posts = Post.where(season: "#{params[:season]}").paginate(page: params[:page], per_page: 5)
     end
 
   end

@@ -9,7 +9,13 @@
 
     <div class="posts_wrap col-md-7">
       <% if params[:tag_name] %>
-      <p class="tag_search_results"><span class="tagword"><%= "#{params[:tag_name]}" %></span>のタグ検索結果</p>
+      <p class="search_results"><span class="word"><%= "#{params[:tag_name]}" %></span>のタグ検索結果</p>
+      <% elsif params[:area] %>
+      <p class="search_results"><span class="word"><%= "#{params[:area]}" %></span>のタグ検索結果</p>
+      <% elsif params[:genre] %>
+      <p class="search_results"><span class="word"><%= "#{params[:genre]}" %></span>のタグ検索結果</p>
+      <% elsif params[:season] %>
+      <p class="search_results"><span class="word"><%= "#{params[:season]}" %></span>のタグ検索結果</p>
       <% end %>
       <%= render @posts %>
       <div class="paginate_wrap">

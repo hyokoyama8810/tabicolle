@@ -4,6 +4,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
+    #タグ絞り込み
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:area]
+      @posts = Post.where(area: "#{params[:area]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:genre]
+      @posts = Post.where(genre: "#{params[:genre]}").paginate(page: params[:page], per_page: 5)
+    elsif params[:season]
+      @posts = Post.where(season: "#{params[:season]}").paginate(page: params[:page], per_page: 5)
+    end
+
   end
 
   def show
@@ -36,7 +47,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:content, :image, :area, :genre, :season)
+      params.require(:post).permit(:content, :image, :area, :genre, :season, :tag_list)
     end
 
     def correct_user

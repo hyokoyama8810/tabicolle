@@ -36,6 +36,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(content: params[:title])
+    if @post.update_attributes(post_params)
+      redirect_to posts_url
+    else
+      render action: :edit
+    end
+  end
+
   def destroy
     @post.destroy
     flash[:notice] = "投稿を削除しました"

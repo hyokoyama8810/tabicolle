@@ -10,14 +10,43 @@
 
     <div class="form_wrap col-md-8">
       <%= form_for(@post, url: post_path(@post))  do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
-          <%= f.label :name, "投稿内容" %><br />
-          <%= f.text_area :content %>
-        </div>
-        <div class="actions">
-          <%= f.submit "投稿", class: "btn" %>
-        </div>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.label :content, "投稿内容" %><em class="mandatory">必須</em><br />
+        <%= f.text_area :content , required: true %>
+      </div>
+      <div class="field">
+        <%= f.label :area, "エリア" %><em class="mandatory">必須</em><br />
+        <%= f.select :area, {"北海道･東北": "北海道･東北", "関東": "関東", "北陸･甲信越": "北陸･甲信越",
+                              "東海": "東海", "関西": "関西", "中国･四国": "中国･四国", "九州･沖縄": "九州･沖縄", "海外･その他": "海外･その他"},
+                            { include_blank: '選択してください'},
+                            { class: 'form-control' , required: true }  %>
+      </div>
+      <div class="field">
+        <%= f.label :genre, "ジャンル" %><em class="mandatory">必須</em><br />
+        <%= f.select :genre, {"観光･散策": "観光･散策", "グルメ": "グルメ","体験･アクティビティ": "体験･アクティビティ",
+                              "温泉": "温泉", "スポーツ観戦": "スポーツ観戦", "その他": "その他"},
+                              { include_blank: '選択してください'},
+                              { class: 'form-control' , required: true }  %>
+      </div>
+      <div class="field">
+        <%= f.label :season, "シーズン" %><em class="mandatory">必須</em><br />
+        <%= f.select :season, {"春": "春",  "夏": "夏", "秋": "秋",  "冬": "冬"},
+                              { include_blank: '選択してください'},
+                              { class: 'form-control' , required: true }  %>
+      </div>
+      <div class="field">
+        <%= f.label :tag_list, "タグ" %><em>(カンマ『 , 』区切りで入力)</em><br />
+        <%= text_field_tag 'post[tag_list]', @post.tag_list.join(","), class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :image, "写真" %><br />
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "更新", class: "btn" %>
+      </div>
+
       <% end %>
     </div>
 

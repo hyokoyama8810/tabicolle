@@ -4,36 +4,56 @@
       <%= image_tag 'title.png' %>
     </div>
 
-    <div class="sign_up"><%= link_to "新規登録", new_user_registration_path %></div>
-    <div class="login"><%= link_to "ログイン", new_user_session_path %></div>
+    <% if not user_signed_in? %>
+      <div class="sign_up"><%= link_to "新規登録", new_user_registration_path, class: "btn" %></div>
+      <div class="login"><%= link_to "ログイン", new_user_session_path, class: "btn" %></div>
+    <% end %>
 
     <div class="about">
-      <h1>Tabicolleとは?</h1>
-      <p>tabicolleは､旅行好きたちが旅の思い出のコレクションをシェアし合うサービスです｡</p>
+      <div class="intro">
+        <h1>Tabicolleとは?</h1>
+        <p>Tabicolleは､旅行好きたちが旅の思い出のコレクションをシェアし合うサービスです｡</p>
+      </div>
 
-      <h2>何度でも旅の思い出蘇る</h2>
-      <p><%= image_tag 'about1' %></p>
+      <div class="detail1">
+        <h2>何度でも旅の思い出蘇る</h2>
+        <%= image_tag 'about1', class: "about1" %>
+      </div>
 
-      <h2>見つかる､新しい旅｡</h2>
-      <div class="chat">
-        <div class="balloon-left">
-          <p>今週末どこ行く?</p>
-        </div>
-        <br>
-        <div class="balloon-right">
-          <p>軽井沢とかどう?</p>
-        </div>
-        <br>
-        <div class="balloon-right">
-          <%= image_tag 'about2' %>
-        </div>
-        <br>
-        <div class="balloon-left">
-          <p>いいね｡ 行こう!!</p>
+      <div class="detail2">
+        <h2>見つかる､新しい旅｡</h2>
+        <div class="chat">
+
+          <div class="balloon-left-wrap">
+            <div class="balloon-left">
+              <p>今週末どこ行く?</p>
+            </div>
+          </div>
+          <br>
+          <div class="balloon-right-wrap">
+            <div class="balloon-right">
+              <p>軽井沢とかどう?</p>
+            </div>
+            <br>
+            <div class="balloon-right">
+              <%= image_tag 'about2', class: "about2" %>
+            </div>
+          </div>
+          <br>
+
+          <div class="balloon-left-wrap">
+            <div class="balloon-left">
+              <p>いいね｡ 行こう!!</p>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
 
-    <div class="sign_up"><%= link_to "今すぐ新規登録", new_user_registration_path %></div>
+    <div class="sign_up_bottom">
+      <p>Tabicolleはあなたの旅の思い出を豊かにします｡<br>まずは会員登録から始めましょう</p>
+      <%= link_to "今すぐ新規登録", new_user_registration_path, class: "btn" %>
+    </div>
   </div>
 </div>

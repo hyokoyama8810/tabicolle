@@ -5,15 +5,151 @@
   }
   .home {
     text-align: center;
-    position: relative;
-    height: calc(100vh - 8rem);
     .title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      padding: 10rem 0;
       img {
         height: 14rem;
+      }
+    }
+    .sign_up {
+      .btn {
+        background-color: #e39c22;
+        padding: 0.5rem 3rem;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    .login {
+      .btn {
+        background-color: #90cba0;
+        padding: 0.5rem 3rem;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .about {
+      padding-top: 3rem;
+      .intro {
+        padding: 2rem 0;
+        h1 {
+          font-size: 2.2rem;
+          font-weight: bold;
+          padding: 1rem 0;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .detail1 {
+        padding: 2rem 0;
+        h2 {
+          font-size: 1.6em;
+          font-weight: bold;
+          padding: 1rem 0;
+        }
+        .about1 {
+          width: 25rem;
+        }
+      }
+      .detail2 {
+        padding: 2rem 3rem;
+        h2 {
+          font-size: 1.6em;
+          font-weight: bold;
+          padding: 1rem 0;
+        }
+        .chat {
+          margin: 0 auto;
+          width: 100%;
+          max-width: 40rem;
+          .balloon-left-wrap {
+            text-align: left;
+            .balloon-left {
+              position: relative;
+              display: inline-block;
+              margin: 1.5em 0 1.5em 15px;
+              padding: 0.8rem 1rem;
+              min-width: 120px;
+              max-width: 80%;
+              color: #555;
+              font-size: 16px;
+              background: #90cba0;
+              border-radius: 0.5rem;
+              &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -30px;
+                margin-top: -15px;
+                border: 15px solid transparent;
+                border-right: 15px solid #90cba0;
+              }
+              p {
+                margin: 0;
+                padding: 0;
+              }
+            }
+          }
+          .balloon-right-wrap {
+            text-align: right;
+            .balloon-right {
+              position: relative;
+              display: inline-block;
+              margin: 1.5em 15px 1.5em 0;
+              padding: 0.8rem 1rem;
+              min-width: 120px;
+              max-width: 80%;
+              color: #555;
+              font-size: 16px;
+              background: #90cba0;
+              border-radius: 0.5rem;
+              &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                margin-top: -15px;
+                border: 15px solid transparent;
+                border-left: 15px solid #90cba0;
+              }
+              p {
+                margin: 0;
+                padding: 0;
+              }
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sign_up_bottom {
+      padding: 2rem 0;
+      margin: 3rem 0;
+      background: #e0e0e0;
+      border-radius: 0.5rem;
+      p {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+      }
+      .btn {
+        background-color: #e39c22;
+        padding: 0.5rem 3rem;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+        &:hover {
+          opacity: 0.6;
+        }
       }
     }
   }

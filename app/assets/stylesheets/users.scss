@@ -41,6 +41,19 @@
           }
         }
       }
+      .new_post_wrap {
+        margin: 1rem 0;
+        text-align: center;
+        .btn {
+          background-color: #0f7d3b;
+          color: #fff;
+          border-radius: 20px;
+          padding: 0.5rem 1.5rem;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
     }
     .posts_wrap {
       .paginate_wrap {

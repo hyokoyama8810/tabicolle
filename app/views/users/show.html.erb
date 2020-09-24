@@ -19,6 +19,9 @@
           <% end %>
         <% end %>
       </div>
+      <div class="new_post_wrap">
+        <%= link_to "新規投稿", new_post_path, class: "btn" %>
+      </div>
     </div>
     <div class="posts_wrap col-md-7">
       <%= render @posts %>

@@ -45,6 +45,9 @@ gem 'bootstrap-will_paginate'
 # tag
 gem 'acts-as-taggable-on', '~> 6.0'
 
+# s3
+gem "aws-sdk-s3", require: false
+
 
 
 group :development, :test do

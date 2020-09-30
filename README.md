@@ -1,22 +1,22 @@
 # Tabicolle (タビコレ)
 
 ## URL
----
+
 https://tabicolle.herokuapp.com/
 
 ## イメージ図
----
+
 ![Tabicolleのイメージ図](./app/assets/images/readme01.png "Tabicolleのイメージ図")
 
 ## 概要
----
+
 **Tabicolle は､旅行好きたちが旅の思い出のコレクションをシェアし合うサービスです｡**
 
 1. 日記感覚で旅行を記録することで何度でも旅の思い出が蘇ります｡
 2. 新しい旅行のプランが見つかります｡
 
 ## 使用例
----
+
 ### 週末予定のないとある大学生
 
 >A君:今週末どっか行かない??
@@ -30,7 +30,7 @@ https://tabicolle.herokuapp.com/
 >B君,C君:そこにしよう!!
 
 ## 実装した機能
----
+
 
 - ユーザーの新規登録･編集機能(Devise)
 - ログイン･ログアウト機能(Devise)
@@ -39,7 +39,7 @@ https://tabicolle.herokuapp.com/
   - 画像アップロード機能(ActiveStorage, AmazonS3)
 
 ## 使用技術
----
+
 ### フロントエンド
 - HTML/CSS
 - Sass(SCSS)

@@ -1,26 +1,62 @@
-# README
+# Tabicolle (タビコレ)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+---
+https://tabicolle.herokuapp.com/
 
-Things you may want to cover:
+## イメージ図
+---
+![Tabicolleのイメージ図](./app/assets/images/readme01.png "Tabicolleのイメージ図")
 
-- Ruby version
+## 概要
+---
+**Tabicolle は､旅行好きたちが旅の思い出のコレクションをシェアし合うサービスです｡**
 
-- System dependencies
+1. 日記感覚で旅行を記録することで何度でも旅の思い出が蘇ります｡
+2. 新しい旅行のプランが見つかります｡
 
-- Configuration
+## 使用例
+---
+### 週末予定のないとある大学生
 
-- Database creation
+>A君:今週末どっか行かない??
+>
+>B君:いいね｡どっか行こう!!
+>
+>C君:どこにする??
+>
+>A君:鳥取砂丘とかどう?? (本アプリの鳥取砂丘のタグがついた投稿を見せる)
+>
+>B君,C君:そこにしよう!!
 
-- Database initialization
+## 実装した機能
+---
 
-- How to run the test suite
+- ユーザーの新規登録･編集機能(Devise)
+- ログイン･ログアウト機能(Devise)
+- 旅行記録投稿･編集機能
+  - タグ機能(acts-as-taggable-on, エリアタグ,ジャンルタグ,シーズンタグ,フリータグ)
+  - 画像アップロード機能(ActiveStorage, AmazonS3)
 
-- Services (job queues, cache servers, search engines, etc.)
+## 使用技術
+---
+### フロントエンド
+- HTML/CSS
+- Sass(SCSS)
+- Bootstrap
 
-- Deployment instructions
+### バックエンド
+- Ruby : 2.6.6
+- Rails : 6.0.3.2
 
-- ...
+### データベース
+- PostgreSQL(本番環境)
+- MySQL(開発環境､テスト環境)
 
-# tabicolle
+### インフラ
+- Heroku
+- AWS(S3)
+
+### その他ツール
+- Github(コード管理)
+- [ロゴメーカー](https://logo-maker.stores.jp/)(ロゴ作成ツール)

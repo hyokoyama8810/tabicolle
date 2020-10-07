@@ -4,10 +4,7 @@ FactoryBot.define do
     area {"東海"}
     genre {"スポーツ観戦"}
     season {"夏"}
-    # tag_list {["foo","bar"]}
-    # sequence(:user_id) {|n| "#{n}"}
-
-    # association :traveler
+    association :user
 
   end
 end

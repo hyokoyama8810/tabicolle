@@ -3,23 +3,12 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   before do
-    @user = build(:user)
+    @user = create(:user)
   end
 
   it "有効なファクトリを持つこと" do
     expect(@user).to be_valid
   end
-
-  # it "名前、メール、パスワードがあれば有効" do
-  #   user = User.new(
-  #     name: "Example User",
-  #     email:      "tester@example.com",
-  #     password:   "foobar",
-  #     password_confirmation:"foobar"
-
-  #   )
-  #   expect(user).to be_valid
-  # end
 
   it "名前がなければ無効" do
     @user.name = nil

@@ -21,5 +21,23 @@ module Tabicolle
 
     config.time_zone = 'Tokyo'
 
+    require_relative 'boot'
+    require 'rails/all'
+
+    Bundler.require(*Rails.groups)
+
+    module Projects
+      class Application < Rails::Application
+        config.load_defaults 5.1
+
+        # Railsが最初から書いているコメントは省略 ...
+
+        config.generators do |g|
+        g.test_framework :rspec,
+          view_specs: false,
+          helper_specs: false
+        end
+      end
+    end
   end
 end

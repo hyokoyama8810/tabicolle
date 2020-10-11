@@ -11,10 +11,25 @@
   <div class="content">
     <p><%= link_to post.content, "/posts/#{post.id}" %></p>
     <%= image_tag post.image if post.image.attached? %>
+    <div class="area_wrap">
+      <h2>エリア</h2>
+      <%= link_to post.area, posts_path(area: post.area) %>
+    </div>
+    <div class="genre_wrap">
+      <h2>ジャンル</h2>
+      <%= link_to post.genre, posts_path(genre: post.genre) %>
+    </div>
+    <div class="season_wrap">
+      <h2>シーズン</h2>
+      <%= link_to post.season, posts_path(season: post.season) %>
+    </div>
+
     <ul class="tag_wrap">
+    <!--
       <li><%= link_to post.area, posts_path(area: post.area) %></li>
       <li><%= link_to post.genre, posts_path(genre: post.genre) %></li>
       <li><%= link_to post.season, posts_path(season: post.season) %></li>
+    -->
       <% post.tag_list.each do |tag| %>
         <li><%= link_to tag, posts_path(tag_name: tag) %></li>
       <% end %>

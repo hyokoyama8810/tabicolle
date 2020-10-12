@@ -127,8 +127,29 @@ body {
     margin: 0 0 1rem 5rem;
     img {
       width: 100%;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
+    .secondary {
+      margin-bottom: 1rem;
+
+      display: flex;
+      .item {
+        margin-right: 2rem;
+        h2 {
+          margin: 0;
+          font-size: 0.7rem;
+          color: #666;
+        }
+        a {
+          font-size: 1rem;
+          color: #095126;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
     .tag_wrap {
       display: flex;
       flex-wrap: wrap;

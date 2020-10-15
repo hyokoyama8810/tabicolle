@@ -15,7 +15,7 @@
       .btn {
         background-color: #e39c22;
         padding: 0.5rem 3rem;
-        margin: 1rem 0;
+        margin-bottom: 1rem;
         font-size: 1.5rem;
         border-radius: 1.5rem;
         &:hover {
@@ -27,6 +27,20 @@
       .btn {
         background-color: #90cba0;
         padding: 0.5rem 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    .guestlogin {
+      .btn {
+        background-color: #0b872c;
+        color: #fff;
+        padding: 0.5rem 3rem;
+        margin-bottom: 1rem;
         font-size: 1.5rem;
         border-radius: 1.5rem;
         &:hover {

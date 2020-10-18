@@ -96,6 +96,27 @@ body {
       padding: 2rem 0;
     }
   }
+  @media (max-width: 767px) {
+    header {
+      .logo {
+        img {
+          height: 3.5rem;
+        }
+      }
+      ul {
+        li {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    main {
+      font-size: 1.5rem;
+      h1 {
+        padding: 1.8rem 0;
+      }
+    }
+  }
 }
 
 // 部分テンプレート
@@ -105,7 +126,6 @@ body {
   margin-bottom: 1rem;
   border-radius: 5px;
   background-color: #e0e0e0;
-  // background-color: #c2decc;
   .icon_wrap {
     display: flex;
     padding-bottom: 0.5rem;
@@ -176,6 +196,47 @@ body {
     .item {
       display: inline;
       padding-left: 0.5rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .icon_wrap {
+      .icon {
+        .gravatar {
+          height: 5rem;
+          width: 5rem;
+        }
+      }
+      .name {
+        font-size: 1.7rem;
+      }
+    }
+    .content {
+      margin: 0 0 1.5rem 6rem;
+      .secondary {
+        .item {
+          margin-right: 1.5rem;
+          h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+          }
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .tag_wrap {
+        margin-bottom: 1.5rem;
+        li {
+          margin-bottom: 1rem;
+          margin-right: 1.5rem;
+        }
+      }
+    }
+    .bottom_wrap {
+      .item {
+        padding-left: 1rem;
+      }
     }
   }
 }

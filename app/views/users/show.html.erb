@@ -23,32 +23,32 @@
         <%= link_to "新規投稿", new_post_path, class: "btn" %>
       </div>
 
-      <h3>フォロー一覧</h3>
-        <% @user.following_user.where.not(id: current_user.id).each do |user| %>
-          <p>
-            <%= "id: #{user.id} email: #{user.email}" %>
-            <% if current_user.following?(user) %>
-              <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
-            <% else %>
-              <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
-            <% end %>
-            <%= link_to "show", user_path(user) %>
-          </p>
-        <% end %>
-      <h3>フォロワー一覧</h3>
-        <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
-          <p>
-            <%= "id: #{user.id} email: #{user.email}" %>
-            <% if current_user.following?(user) %>
-              <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
-            <% else %>
-              <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
-            <% end %>
-            <%= link_to "show", user_path(user) %>
-          </p>
-        <% end %>
+      <div class="following_followers_wrap">
 
-    </div>
+        <h2>フォロー一覧</h2>
+
+        <div class="following">
+          <% @user.following_user.each do |user| %>
+          <div class="container">
+            <p class="icon"><%= link_to gravatar_for(user), user %></p>
+            <p class="name"><%= link_to user.name, user %></p>
+          </div>
+          <% end %>
+        </div>
+
+        <h2>フォロワー一覧</h2>
+        <div class="followers">
+          <% @user.follower_user.each do |user| %>
+          <div class="container">
+            <p class="icon"><%= link_to gravatar_for(user), user %></p>
+            <p class="name"><%= link_to user.name, user %></p>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+
+      </div>
 
     <div class="posts_wrap col-md-7">
       <%= render @posts %>

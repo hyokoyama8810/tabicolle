@@ -91,3 +91,84 @@
     }
   }
 }
+
+// 部分テンプレート
+//// _post.html.erb
+.post {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  .icon_wrap {
+    display: flex;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    .icon {
+      width: auto;
+      padding-right: 1rem;
+      .gravatar {
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+    .name {
+      font-size: 1.2rem;
+    }
+  }
+  .content {
+    margin: 0 0 1rem 5rem;
+    img {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .secondary {
+      margin-bottom: 1rem;
+
+      display: flex;
+      .item {
+        margin-right: 2rem;
+        h2 {
+          margin: 0;
+          font-size: 0.7rem;
+          color: #666;
+        }
+        a {
+          font-size: 1rem;
+          color: #095126;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    .tag_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      li {
+        background-color: #0f7d3b;
+        border-radius: 4px;
+        padding: 4px;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        a {
+          text-decoration: none;
+          color: #fff;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .bottom_wrap {
+    text-align: right;
+    .item {
+      display: inline;
+      padding-left: 0.5rem;
+    }
+  }
+}

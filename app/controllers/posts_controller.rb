@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit, :update]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    @posts = Post.where.not(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
     #タグ絞り込み
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)

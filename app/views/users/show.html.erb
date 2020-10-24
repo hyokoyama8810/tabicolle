@@ -19,9 +19,11 @@
           <% end %>
         <% end %>
       </div>
+      <% if @user == current_user %>
       <div class="new_post_wrap">
         <%= link_to "新規投稿", new_post_path, class: "btn" %>
       </div>
+      <% end %>
 
       <div class="following_followers_wrap">
 

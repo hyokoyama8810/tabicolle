@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="content">
-    <p><%= link_to post.content, "/posts/#{post.id}" %></p>
+    <p><%=  post.content %></p>
     <%= image_tag post.image if post.image.attached? %>
 
     <div class="secondary">

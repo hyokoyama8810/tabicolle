@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:destroy, :edit, :update]
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
@@ -61,7 +61,8 @@ class PostsController < ApplicationController
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
-      redirect_to root_url if @post.nil?
+      redirect_to posts_url if @post.nil?
+      flash[:alert] = "他ユーザーの投稿の編集･削除はできません"
     end
 
 end

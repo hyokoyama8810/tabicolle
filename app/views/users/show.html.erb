@@ -19,10 +19,39 @@
           <% end %>
         <% end %>
       </div>
+      <% if @user == current_user %>
       <div class="new_post_wrap">
         <%= link_to "新規投稿", new_post_path, class: "btn" %>
       </div>
-    </div>
+      <% end %>
+
+      <div class="following_followers_wrap">
+
+        <h2>フォロー一覧</h2>
+
+        <div class="following">
+          <% @user.following_user.each do |user| %>
+          <div class="container">
+            <p class="icon"><%= link_to gravatar_for(user), user %></p>
+            <p class="name"><%= link_to user.name, user %></p>
+          </div>
+          <% end %>
+        </div>
+
+        <h2>フォロワー一覧</h2>
+        <div class="followers">
+          <% @user.follower_user.each do |user| %>
+          <div class="container">
+            <p class="icon"><%= link_to gravatar_for(user), user %></p>
+            <p class="name"><%= link_to user.name, user %></p>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+
+      </div>
+
     <div class="posts_wrap col-md-7">
       <%= render @posts %>
       <div class="paginate_wrap">

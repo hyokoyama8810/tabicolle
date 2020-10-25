@@ -54,6 +54,32 @@
           }
         }
       }
+      .following_followers_wrap {
+        text-align: center;
+        padding: 0 1.8rem;
+        margin: 2rem 0;
+        h2 {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+        .following,
+        .followers {
+          margin: 1rem 0;
+          .container {
+            display: flex;
+            align-items: center;
+            .gravatar {
+              margin-right: 1rem;
+              border-radius: 50%;
+              height: 40px;
+              width: 40px;
+            }
+            .name {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
     }
     .posts_wrap {
       .paginate_wrap {
@@ -72,31 +98,6 @@
           }
         }
       }
-      // .post {
-      //   padding: 1rem;
-      //   margin-bottom: 1rem;
-      //   border-radius: 5px;
-      //   .icon_wrap {
-      //     display: flex;
-      //     padding-bottom: 0.5rem;
-      //     align-items: center;
-      //     .icon {
-      //       width: auto;
-      //       padding-right: 1rem;
-      //       .gravatar {
-      //         border-radius: 50%;
-      //         height: 4rem;
-      //         width: 4rem;
-      //       }
-      //     }
-      //     .name {
-      //       font-size: 1.2rem;
-      //     }
-      //   }
-      //   .content {
-      //     padding: 0 0 1rem 5rem;
-      //   }
-      // }
     }
   }
 }

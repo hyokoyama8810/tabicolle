@@ -3,26 +3,44 @@
 <div class="posts">
   <div class="index row">
 
-    <!-- レイアウトの余白の都合上で col-md-3 を配置 [todo]あとからなにか加える可能性がある｡ -->
+    <%# レイアウトの余白の都合上で col-md-3 を配置 [todo]あとからなにか加える可能性がある｡  %>
     <div class="col-md-3">
     </div>
 
+    <%# [todo] 下のif文もっと綺麗な書き方ありそう %>
     <div class="posts_wrap col-md-7">
       <% if params[:tag_name] %>
       <p class="search_results"><span class="word"><%= "#{params[:tag_name]}" %></span>のタグがついた投稿</p>
+      <%= render @tag_name_posts %>
+
       <% elsif params[:area] %>
       <p class="search_results"><span class="word"><%= "#{params[:area]}" %></span>の投稿</p>
+      <%= render @area_posts %>
+
       <% elsif params[:genre] %>
       <p class="search_results"><span class="word"><%= "#{params[:genre]}" %></span>の投稿</p>
+      <%= render @genre_posts %>
+
       <% elsif params[:season] %>
       <p class="search_results"><span class="word"><%= "#{params[:season]}" %></span>の投稿</p>
+      <%= render @season_posts %>
+
       <% else %>
+        <% unless current_user.follower.count == 0 %>
+        <p>フォローしているユーザーの投稿</p>
+        <%= render @following_user_posts %>
+        <div class="paginate_wrap">
+          <%= will_paginate @following_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
+        </div>
+        <% else %>
+        <p>全ユーザーの投稿 (ユーザーをたくさんフォローしよう!!)</p>
+        <%= render @unfollowing_user_posts %>
+        <div class="paginate_wrap">
+          <%= will_paginate @unfollowing_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
+        </div>
+        <% end %>
 
       <% end %>
-      <%= render @posts %>
-      <div class="paginate_wrap">
-        <%= will_paginate @posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
-      </div>
     </div>
 
     <%= render 'shared/sidebar' %>

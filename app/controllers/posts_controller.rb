@@ -3,16 +3,18 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit, :update]
 
   def index
-    @posts = Post.where.not(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+    @following_user_posts = Post.where(user_id: current_user.following_user).paginate(page: params[:page], per_page: 5)
+    @unfollowing_user_posts = Post.where.not(user_id: current_user.id).paginate(page: params[:page], per_page: 10)
+
     #タグ絞り込み
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)
+      @tag_name_posts = Post.tagged_with("#{params[:tag_name]}").paginate(page: params[:page], per_page: 5)
     elsif params[:area]
-      @posts = Post.where(area: "#{params[:area]}").paginate(page: params[:page], per_page: 5)
+      @area_posts = Post.where(area: "#{params[:area]}").paginate(page: params[:page], per_page: 5)
     elsif params[:genre]
-      @posts = Post.where(genre: "#{params[:genre]}").paginate(page: params[:page], per_page: 5)
+      @genre_posts = Post.where(genre: "#{params[:genre]}").paginate(page: params[:page], per_page: 5)
     elsif params[:season]
-      @posts = Post.where(season: "#{params[:season]}").paginate(page: params[:page], per_page: 5)
+      @season_posts = Post.where(season: "#{params[:season]}").paginate(page: params[:page], per_page: 5)
     end
 
   end

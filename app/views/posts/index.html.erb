@@ -27,13 +27,13 @@
 
       <% else %>
         <% unless current_user.follower.count == 0 %>
-        <p>フォローしているユーザーの投稿</p>
+        <h2 class="desc">フォローしているユーザーの投稿</h2>
         <%= render @following_user_posts %>
         <div class="paginate_wrap">
           <%= will_paginate @following_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
         </div>
         <% else %>
-        <p>全ユーザーの投稿 (ユーザーをたくさんフォローしよう!!)</p>
+        <h2 class="desc">全ユーザーの投稿 (ユーザーをたくさんフォローしよう!!)</h2>
         <%= render @unfollowing_user_posts %>
         <div class="paginate_wrap">
           <%= will_paginate @unfollowing_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　

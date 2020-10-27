@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post.image.attach(params[:post][:image])
     if @post.save
       flash[:notice] = "投稿が作成されました｡"
-      redirect_to user_url
+      redirect_to current_user
     else
       render 'posts/new'
     end
@@ -48,6 +48,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = "投稿を削除しました"
     redirect_to request.referrer || root_url
@@ -65,7 +66,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.find_by(id: params[:id])
       # redirect_to posts_url if @post.nil?
       # flash[:alert] = "他ユーザーの投稿の編集･削除はできません"
-      if @post.nil?
+      if @post.nil? && current_user.admin = false
         flash[:alert] = "他ユーザーの投稿の編集･削除はできません"
         redirect_to posts_url
       end

@@ -34,7 +34,7 @@
     </ul>
   </div>
   <div class="bottom_wrap">
-    <% if current_user?(post.user) %>
+    <% if current_user?(post.user) || current_user.admin? %>
     <div class="item">
       <%= link_to "編集", edit_post_path(post) %>
     </div>

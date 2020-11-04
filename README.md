@@ -29,14 +29,15 @@ https://tabicolle.herokuapp.com/
 >
 >B君,C君:そこにしよう!!
 
-## 実装した機能
 
+## 実装した機能
 
 - ユーザーの新規登録･編集機能(Devise)
 - ログイン･ログアウト機能(Devise)
 - 旅行記録投稿･編集機能
   - タグ機能(acts-as-taggable-on, エリアタグ,ジャンルタグ,シーズンタグ,フリータグ)
   - 画像アップロード機能(ActiveStorage, AmazonS3)
+  - フォロー､フォロワー機能
 
 ## 使用技術
 

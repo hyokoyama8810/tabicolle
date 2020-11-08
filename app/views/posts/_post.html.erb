@@ -10,7 +10,7 @@
   </div>
   <div class="content">
     <p><%=  post.content %></p>
-    <%= image_tag post.image if post.image.attached? %>
+    <%= image_tag post.image.variant(resize: "560x560") if post.image.attached? %>
 
     <div class="secondary">
       <div class="area item">

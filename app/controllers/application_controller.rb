@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception #CSRF(サイトに攻撃用のコードを仕込み、アクセスしたユーザーに対して意図しない操作を行わせる攻撃)対策
+  protect_from_forgery with: :exception # CSRF(サイトに攻撃用のコードを仕込み、アクセスしたユーザーに対して意図しない操作を行わせる攻撃)対策
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # ログイン後のリダイレクト先を指定
-  def after_sign_in_path_for (resource)
+  def after_sign_in_path_for(resource)
     user_path(resource)
   end
 
   # ログアウト後に遷移するpathを設定
-  def after_sign_out_path_for(resource)
+  def after_sign_out_path_for(_resource)
     new_user_session_path
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -46,13 +48,13 @@ gem 'will_paginate'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 # s3
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
@@ -84,8 +86,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem "minitest-rails"
-  gem "minitest-rails-capybara"
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
   gem 'webdrivers'
 end
 
@@ -94,4 +96,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

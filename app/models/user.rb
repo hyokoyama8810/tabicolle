@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable#, :omniauthable, omniauth_providers:[:twitter]
+         :confirmable, :lockable, :timeoutable # , :omniauthable, omniauth_providers:[:twitter]
 
   has_many :posts, dependent: :destroy
-  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得
-  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
+  has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy # フォロー取得
+  has_many :followed, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy # フォロワー取得
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
-  validates :name,  presence: true
+  validates :name, presence: true
 
   # ユーザーをフォローする
   def follow(user_id)
@@ -27,9 +29,9 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_create_by!(name: 'ゲスト',email: 'guest@example.com') do |user|
+    find_or_create_by!(name: 'ゲスト', email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.confirmed_at = Time.now
+      user.confirmed_at = Time.zone.now
     end
   end
 end

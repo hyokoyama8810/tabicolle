@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UsersProfileTest < ActionDispatch::IntegrationTest
@@ -8,7 +10,6 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
   def setup
     Warden.test_mode!
     @user = users(:alice)
-
   end
 
   # [todo] ↓のテストがパスしない -> ログインできていない可能性がある

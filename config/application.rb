@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -32,9 +34,9 @@ module Tabicolle
         # Railsが最初から書いているコメントは省略 ...
 
         config.generators do |g|
-        g.test_framework :rspec,
-                         view_specs: false,
-                         helper_specs: false
+          g.test_framework :rspec,
+                           view_specs: false,
+                           helper_specs: false
         end
       end
     end

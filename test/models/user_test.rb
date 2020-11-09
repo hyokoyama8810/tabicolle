@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
                      email: "user@example.com",
                      password: "foobar",
                      password_confirmation: "foobar"
-    )
+                    )
   end
 
   test "should be valid" do
@@ -76,5 +76,4 @@ class UserTest < ActiveSupport::TestCase
   #   alice.unfollow(bob)
   #   assert_not alice.following?(bob)
   # end
-
 end

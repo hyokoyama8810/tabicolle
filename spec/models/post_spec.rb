@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   before do
     @user = create(:user)
     @post = create(:post)
@@ -52,5 +51,4 @@ RSpec.describe Post, type: :model do
     testpost3=create(:post)
     expect(Post.first).to eq testpost3
   end
-
 end

@@ -70,8 +70,8 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
-Layout/LineLength:
-  Max: 150
+# Layout/LineLength:
+#   Max: 150
 
 Metrics/AbcSize:
   Exclude:

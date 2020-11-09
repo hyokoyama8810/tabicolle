@@ -9,7 +9,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @other_user = users(:bob)
   end
 
-
   test "should redirect create when not logged in" do
     assert_no_difference 'Post.count' do
       post posts_path, params: { post: { content: "金沢城に行ってきたよ!!" } }
@@ -32,5 +31,4 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to new_user_session_url # [todo] root_pathにリダイレクトするようにしたい
   end
-
 end

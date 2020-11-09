@@ -36,7 +36,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response 401
     # assert_redirected_to new_user_session_url
-
   end
 
   # 異なるユーザーとしてログインした場合
@@ -78,6 +77,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   #   end
   #   assert_not flash.empty?
   # end
-
-
 end

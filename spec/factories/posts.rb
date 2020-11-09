@@ -5,6 +5,5 @@ FactoryBot.define do
     genre {"スポーツ観戦"}
     season {"夏"}
     association :user
-
   end
 end

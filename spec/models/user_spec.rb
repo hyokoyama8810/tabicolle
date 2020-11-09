@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   before do
     @user = create(:user)
   end
@@ -56,5 +55,4 @@ RSpec.describe User, type: :model do
     @user.valid?
     expect(@user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
   end
-
 end

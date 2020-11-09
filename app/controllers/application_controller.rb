@@ -12,9 +12,8 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
-
-
   protected
+
     # 新規登録､更新をする際に登録するパラメーターを増やす
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])

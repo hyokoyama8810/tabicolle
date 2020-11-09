@@ -187,7 +187,6 @@ Devise.setup do |config|
   config.maximum_attempts = 4
   # -> 5回連続でログインに失敗したら､ロックがかかり､メールでロックを解除する
 
-
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
 

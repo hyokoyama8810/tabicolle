@@ -22,9 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
+gem 'active_storage_validations'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
-gem 'active_storage_validations'
 
 # Japanese localization of rails
 gem 'rails-i18n'
@@ -39,8 +39,8 @@ gem 'devise'
 gem 'omniauth-twitter'
 
 # paginate
-gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 # tag
 gem 'acts-as-taggable-on', '~> 6.0'
@@ -48,27 +48,26 @@ gem 'acts-as-taggable-on', '~> 6.0'
 # s3
 gem "aws-sdk-s3", require: false
 
-
-
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
-  gem 'factory_bot_rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   # RuboCop
+  gem 'overcommit'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
@@ -76,19 +75,18 @@ group :development do
 end
 
 group :test do
-
-  gem 'rails-controller-testing'
+  gem 'guard', '2.16.2'
+  gem 'guard-minitest', '2.4.4'
   gem 'minitest'
-  gem 'minitest-reporters',       '1.1.14'
-  gem 'guard',                    '2.16.2'
-  gem 'guard-minitest',           '2.4.4'
+  gem 'minitest-reporters', '1.1.14'
+  gem 'rails-controller-testing'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
   gem "minitest-rails"
   gem "minitest-rails-capybara"
+  gem 'webdrivers'
 end
 
 group :production do

@@ -11,7 +11,5 @@ class Post < ApplicationRecord
   validates :image, content_type: { in: %w[image/jpeg image/gif image/png], message: "有効な画像形式でなければなりません" },
                     size: { less_than: 5.megabytes, message: "画像サイズが5未満でなければなりません" }
 
-
   acts_as_taggable
-
 end

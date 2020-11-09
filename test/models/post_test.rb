@@ -5,9 +5,9 @@ class PostTest < ActiveSupport::TestCase
     @user = users(:alice)
     # このコードは慣習的に正しくない
     @post = @user.posts.build(content: "静岡でサッカー見に行ってきた!!",
-                              area:    "東海",
-                              genre:   "スポーツ観戦",
-                              season:  "夏")
+                              area: "東海",
+                              genre: "スポーツ観戦",
+                              season: "夏")
   end
 
   test "should be valid" do

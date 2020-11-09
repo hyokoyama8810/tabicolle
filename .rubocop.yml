@@ -68,7 +68,7 @@ Lint/RaiseException:
 
 # https://rubocop.readthedocs.io/en/stable/cops_lint/#lintstructnewoverride
 Lint/StructNewOverride:
-  Enabled: tru
+  Enabled: true
 
 Layout/LineLength:
   Max: 150

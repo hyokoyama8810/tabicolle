@@ -12,7 +12,7 @@
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
 Bundler/OrderedGems:
   Exclude:
-    - 'Gemfile'
+    - "Gemfile"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -20,7 +20,7 @@ Bundler/OrderedGems:
 # SupportedStyles: outdent, indent
 Layout/AccessModifierIndentation:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -28,39 +28,39 @@ Layout/AccessModifierIndentation:
 # SupportedStyles: with_first_argument, with_fixed_indentation
 Layout/ArgumentAlignment:
   Exclude:
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
-    - 'config/application.rb'
+    - "bin/webpack"
+    - "bin/webpack-dev-server"
+    - "config/application.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/ClosingParenthesisIndentation:
   Exclude:
-    - 'test/models/user_test.rb'
+    - "test/models/user_test.rb"
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Layout/EmptyLineAfterGuardClause:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 19
 # Cop supports --auto-correct.
 Layout/EmptyLines:
   Exclude:
-    - 'Gemfile'
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'app/models/post.rb'
-    - 'config/application.rb'
-    - 'config/environments/production.rb'
-    - 'config/initializers/devise.rb'
-    - 'config/routes.rb'
-    - 'db/migrate/20200809024318_devise_create_users.rb'
-    - 'test/controllers/posts_controller_test.rb'
-    - 'test/controllers/static_pages_controller_test.rb'
-    - 'test/controllers/users_controller_test.rb'
-    - 'test/models/post_test.rb'
+    - "Gemfile"
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/users_controller.rb"
+    - "app/models/post.rb"
+    - "config/application.rb"
+    - "config/environments/production.rb"
+    - "config/initializers/devise.rb"
+    - "config/routes.rb"
+    - "db/migrate/20200809024318_devise_create_users.rb"
+    - "test/controllers/posts_controller_test.rb"
+    - "test/controllers/static_pages_controller_test.rb"
+    - "test/controllers/users_controller_test.rb"
+    - "test/models/post_test.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -68,7 +68,7 @@ Layout/EmptyLines:
 # SupportedStyles: around, only_before
 Layout/EmptyLinesAroundAccessModifier:
   Exclude:
-    - 'app/controllers/application_controller.rb'
+    - "app/controllers/application_controller.rb"
 
 # Offense count: 10
 # Cop supports --auto-correct.
@@ -76,14 +76,14 @@ Layout/EmptyLinesAroundAccessModifier:
 # SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
-    - 'Gemfile'
-    - 'config/routes.rb'
-    - 'db/schema.rb'
-    - 'spec/factories/posts.rb'
-    - 'spec/models/post_spec.rb'
-    - 'spec/models/user_spec.rb'
-    - 'spec/rails_helper.rb'
-    - 'test/controllers/users_controller_test.rb'
+    - "Gemfile"
+    - "config/routes.rb"
+    - "db/schema.rb"
+    - "spec/factories/posts.rb"
+    - "spec/models/post_spec.rb"
+    - "spec/models/user_spec.rb"
+    - "spec/rails_helper.rb"
+    - "test/controllers/users_controller_test.rb"
 
 # Offense count: 15
 # Cop supports --auto-correct.
@@ -91,26 +91,26 @@ Layout/EmptyLinesAroundBlockBody:
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
 Layout/EmptyLinesAroundClassBody:
   Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/controllers/static_pages_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'app/models/post.rb'
-    - 'app/models/relationship.rb'
-    - 'test/controllers/posts_controller_test.rb'
-    - 'test/controllers/static_pages_controller_test.rb'
-    - 'test/controllers/users_controller_test.rb'
-    - 'test/integration/users_signup_test.rb'
-    - 'test/models/post_test.rb'
-    - 'test/models/relationship_test.rb'
-    - 'test/models/user_test.rb'
+    - "app/controllers/posts_controller.rb"
+    - "app/controllers/static_pages_controller.rb"
+    - "app/controllers/users/registrations_controller.rb"
+    - "app/controllers/users_controller.rb"
+    - "app/models/post.rb"
+    - "app/models/relationship.rb"
+    - "test/controllers/posts_controller_test.rb"
+    - "test/controllers/static_pages_controller_test.rb"
+    - "test/controllers/users_controller_test.rb"
+    - "test/integration/users_signup_test.rb"
+    - "test/models/post_test.rb"
+    - "test/models/relationship_test.rb"
+    - "test/models/user_test.rb"
 
 # Offense count: 3
 # Cop supports --auto-correct.
 Layout/EmptyLinesAroundMethodBody:
   Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'test/integration/users_profile_test.rb'
+    - "app/controllers/posts_controller.rb"
+    - "test/integration/users_profile_test.rb"
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -118,15 +118,15 @@ Layout/EmptyLinesAroundMethodBody:
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
 Layout/EmptyLinesAroundModuleBody:
   Exclude:
-    - 'app/helpers/posts_helper.rb'
-    - 'app/helpers/static_pages_helper.rb'
+    - "app/helpers/posts_helper.rb"
+    - "app/helpers/static_pages_helper.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
 Layout/ExtraSpacing:
   Exclude:
-    - 'app/models/user.rb'
+    - "app/models/user.rb"
 
 # Offense count: 9
 # Cop supports --auto-correct.
@@ -136,11 +136,11 @@ Layout/ExtraSpacing:
 # SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
 Layout/HashAlignment:
   Exclude:
-    - 'app/models/post.rb'
-    - 'test/controllers/users_controller_test.rb'
-    - 'test/integration/users_signup_test.rb'
-    - 'test/models/post_test.rb'
-    - 'test/models/user_test.rb'
+    - "app/models/post.rb"
+    - "test/controllers/users_controller_test.rb"
+    - "test/integration/users_signup_test.rb"
+    - "test/models/post_test.rb"
+    - "test/models/user_test.rb"
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -148,29 +148,29 @@ Layout/HashAlignment:
 # SupportedStyles: normal, indented_internal_methods
 Layout/IndentationConsistency:
   Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/posts_controller.rb'
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/posts_controller.rb"
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
 Layout/IndentationWidth:
   Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/posts_controller.rb'
-    - 'config/application.rb'
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/posts_controller.rb"
+    - "config/application.rb"
 
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: AllowDoxygenCommentStyle, AllowGemfileRubyComment.
 Layout/LeadingCommentSpace:
   Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/posts_controller.rb'
-    - 'app/helpers/posts_helper.rb'
-    - 'app/helpers/users_helper.rb'
-    - 'app/models/user.rb'
-    - 'test/models/post_test.rb'
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/posts_controller.rb"
+    - "app/helpers/posts_helper.rb"
+    - "app/helpers/users_helper.rb"
+    - "app/models/user.rb"
+    - "test/models/post_test.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -178,27 +178,27 @@ Layout/LeadingCommentSpace:
 # SupportedStyles: symmetrical, new_line, same_line
 Layout/MultilineMethodCallBraceLayout:
   Exclude:
-    - 'test/models/user_test.rb'
+    - "test/models/user_test.rb"
 
 # Offense count: 3
 # Cop supports --auto-correct.
 Layout/SpaceAfterColon:
   Exclude:
-    - 'app/helpers/posts_helper.rb'
-    - 'app/helpers/users_helper.rb'
-    - 'test/models/user_test.rb'
+    - "app/helpers/posts_helper.rb"
+    - "app/helpers/users_helper.rb"
+    - "test/models/user_test.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/SpaceAfterComma:
   Exclude:
-    - 'app/models/user.rb'
+    - "app/models/user.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/SpaceAfterMethodName:
   Exclude:
-    - 'app/controllers/application_controller.rb'
+    - "app/controllers/application_controller.rb"
 
 # Offense count: 5
 # Cop supports --auto-correct.
@@ -206,21 +206,21 @@ Layout/SpaceAfterMethodName:
 # SupportedStylesForExponentOperator: space, no_space
 Layout/SpaceAroundOperators:
   Exclude:
-    - 'spec/models/post_spec.rb'
-    - 'spec/models/user_spec.rb'
-    - 'test/models/user_test.rb'
+    - "spec/models/post_spec.rb"
+    - "spec/models/user_spec.rb"
+    - "test/models/user_test.rb"
 
 # Offense count: 3
 # Cop supports --auto-correct.
 Layout/SpaceBeforeComma:
   Exclude:
-    - 'app/models/post.rb'
+    - "app/models/post.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/SpaceBeforeComment:
   Exclude:
-    - 'app/models/user.rb'
+    - "app/models/user.rb"
 
 # Offense count: 6
 # Cop supports --auto-correct.
@@ -229,8 +229,8 @@ Layout/SpaceBeforeComment:
 # SupportedStylesForEmptyBrackets: space, no_space
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
-    - 'config/environments/production.rb'
-    - 'db/migrate/20200825014744_create_active_storage_tables.active_storage.rb'
+    - "config/environments/production.rb"
+    - "db/migrate/20200825014744_create_active_storage_tables.active_storage.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -239,7 +239,7 @@ Layout/SpaceInsideArrayLiteralBrackets:
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceInsideBlockBraces:
   Exclude:
-    - 'spec/factories/posts.rb'
+    - "spec/factories/posts.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -255,33 +255,33 @@ Layout/SpaceInsideHashLiteralBraces:
 # SupportedStyles: final_newline, final_blank_line
 Layout/TrailingEmptyLines:
   Exclude:
-    - 'config/environment.rb'
-    - 'test/integration/users_signup_test.rb'
+    - "config/environment.rb"
+    - "test/integration/users_signup_test.rb"
 
 # Offense count: 1
 # Configuration parameters: AllowSafeAssignment.
 Lint/AssignmentInCondition:
   Exclude:
-    - 'app/controllers/posts_controller.rb'
+    - "app/controllers/posts_controller.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods, IgnoreNotImplementedMethods.
 Lint/UnusedMethodArgument:
   Exclude:
-    - 'app/controllers/application_controller.rb'
+    - "app/controllers/application_controller.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: ContextCreatingMethods, MethodCreatingMethods.
 Lint/UselessAccessModifier:
   Exclude:
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 2
 Lint/UselessAssignment:
   Exclude:
-    - 'spec/models/post_spec.rb'
+    - "spec/models/post_spec.rb"
 
 # Offense count: 4
 # Configuration parameters: IgnoredMethods.
@@ -318,7 +318,7 @@ Style/AsciiComments:
 # Cop supports --auto-correct.
 Style/BlockComments:
   Exclude:
-    - 'spec/spec_helper.rb'
+    - "spec/spec_helper.rb"
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -326,17 +326,17 @@ Style/BlockComments:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/test_helper.rb'
+    - "app/controllers/users/registrations_controller.rb"
+    - "app/controllers/users/sessions_controller.rb"
+    - "test/channels/application_cable/connection_test.rb"
+    - "test/test_helper.rb"
 
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/ColonMethodCall:
   Exclude:
-    - 'app/helpers/posts_helper.rb'
-    - 'app/helpers/users_helper.rb'
+    - "app/helpers/posts_helper.rb"
+    - "app/helpers/users_helper.rb"
 
 # Offense count: 26
 Style/Documentation:
@@ -348,17 +348,17 @@ Style/Documentation:
 # SupportedStyles: compact, expanded
 Style/EmptyMethod:
   Exclude:
-    - 'app/controllers/static_pages_controller.rb'
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/static_pages_controller.rb"
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
   Exclude:
-    - 'bin/bundle'
-    - 'bin/rails'
-    - 'bin/rake'
-    - 'bin/rspec'
+    - "bin/bundle"
+    - "bin/rails"
+    - "bin/rake"
+    - "bin/rspec"
 
 # Offense count: 83
 # Cop supports --auto-correct.
@@ -371,59 +371,59 @@ Style/FrozenStringLiteralComment:
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'db/migrate/20200913003042_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
-    - 'db/migrate/20200913003043_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+    - "app/controllers/posts_controller.rb"
+    - "app/controllers/users/registrations_controller.rb"
+    - "db/migrate/20200913003042_change_collation_for_tag_names.acts_as_taggable_on_engine.rb"
+    - "db/migrate/20200913003043_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb"
 
 # Offense count: 16
 # Cop supports --auto-correct.
 # Configuration parameters: UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
 # SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
 Style/HashSyntax:
-  EnforcedStyle: hash_rockets
+  EnforcedStyle: ruby19
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:
   Exclude:
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'bin/bundle'
-    - 'db/migrate/20200913003042_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
-    - 'db/migrate/20200913003043_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+    - "app/controllers/users/registrations_controller.rb"
+    - "bin/bundle"
+    - "db/migrate/20200913003042_change_collation_for_tag_names.acts_as_taggable_on_engine.rb"
+    - "db/migrate/20200913003043_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: MinDigits, Strict.
 Style/NumericLiterals:
   Exclude:
-    - 'db/schema.rb'
+    - "db/schema.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
-    - 'spec/models/user_spec.rb'
+    - "spec/models/user_spec.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/PerlBackrefs:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/RedundantBegin:
   Exclude:
-    - 'bin/yarn'
+    - "bin/yarn"
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Style/RedundantInterpolation:
   Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'test/controllers/static_pages_controller_test.rb'
+    - "app/controllers/posts_controller.rb"
+    - "test/controllers/static_pages_controller_test.rb"
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -436,7 +436,7 @@ Style/SpecialGlobalVars:
 # Cop supports --auto-correct.
 Style/StderrPuts:
   Exclude:
-    - 'bin/yarn'
+    - "bin/yarn"
 
 # Offense count: 301
 # Cop supports --auto-correct.

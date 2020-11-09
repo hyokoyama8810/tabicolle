@@ -49,7 +49,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
   test "should redirect update when logged in as wrong user" do
     login_as(@other_user, scope: :user)
-    patch user_registration_path(@user), params: { user: { name:  @user.name,
+    patch user_registration_path(@user), params: { user: { name: @user.name,
                                                            email: @user.email } }
     assert_not flash.empty?
     assert_redirected_to new_user_session_url
@@ -66,7 +66,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   # 正しいユーザーとしてログインした場合
   test "should redirect update when logged in as correct user" do
     login_as(@user, scope: :user)
-    patch user_registration_path(@user), params: { user: { name:  "new",
+    patch user_registration_path(@user), params: { user: { name: "new",
                                                            email: "new@example.com" } }
     assert_not flash.empty?
   end

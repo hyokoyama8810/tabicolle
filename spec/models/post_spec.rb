@@ -22,16 +22,19 @@ RSpec.describe Post, type: :model do
     @post.valid?
     expect(@post.errors[:content]).to include("を入力してください")
   end
+
   it "エリアがないとき無効になる" do
     @post.area = nil
     @post.valid?
     expect(@post.errors[:area]).to include("を入力してください")
   end
+
   it "ジャンルがないとき無効になる" do
     @post.genre = nil
     @post.valid?
     expect(@post.errors[:genre]).to include("を入力してください")
   end
+
   it "シーズンがないとき無効になる" do
     @post.season = nil
     @post.valid?

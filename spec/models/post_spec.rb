@@ -14,9 +14,9 @@ RSpec.describe Post, type: :model do
     expect(@post.errors[:user_id]).to include('を入力してください')
   end
 
-  pending '投稿のuser_idとユーザーのidが一致している' do
-    expect(@post.user_id).to eq @user.id
-  end
+  # pending '投稿のuser_idとユーザーのidが一致している' do
+  #   expect(@post.user_id).to eq @user.id
+  # end
 
   it '本文がないとき無効になる' do
     @post.content = nil

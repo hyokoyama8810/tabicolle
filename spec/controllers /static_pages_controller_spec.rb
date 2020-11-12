@@ -1,12 +1,12 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'rails_helper'
 
 RSpec.describe StaticPagesController, type: :controller do
   describe '#home' do
-    it '正常なレスポンスを返すこと' do
+    it '正常にレスポンスを返すこと' do
       get :home
-      expect(response).to have_http_status '200'
+      expect(response).to be_successful
     end
   end
 end

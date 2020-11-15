@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Posts', js: true, type: :feature do
-  it 'ユーザーが新規投稿して､編集､削除をする' do
+RSpec.describe 'Posts', type: :feature do
+  it 'ユーザーが新規投稿して､編集､削除をする', js: true do
     user = create(:user)
 
     visit root_path

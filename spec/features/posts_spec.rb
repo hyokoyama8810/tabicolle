@@ -12,7 +12,7 @@ RSpec.describe 'Posts', js: true, type: :feature do
     fill_in 'パスワード', with: user.password
     click_button 'ログイン'
     expect(page).to have_content 'ログインしました。'
-
+    # create
     expect {
       click_on '新規投稿', match: :first
       fill_in '投稿内容', with: '東京スカイツリーに行ってきた!!'
@@ -26,12 +26,12 @@ RSpec.describe 'Posts', js: true, type: :feature do
 
       expect(page).to have_content user.name.to_s
       expect(page).to have_content '東京スカイツリーに行ってきた!!'
+      expect(page).to have_selector("img[src$='testimg.png']")
       expect(page).to have_content '関東'
       expect(page).to have_content '観光･散策'
       expect(page).to have_content '春'
       expect(page).to have_content '東京スカイツリー'
       expect(page).to have_content '東京'
-      # [todo] 画像が出力されているかテストしたい
     }.to change(user.posts, :count).by(1)
     expect(page).to have_current_path "/users/#{user.id}"
     expect(page).to have_content '投稿が作成されました｡'

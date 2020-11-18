@@ -8,7 +8,7 @@ RSpec.describe 'Posts', type: :request do
     @post = create(:post, user_id: @user.id)
   end
 
-  describe 'GET index' do
+  describe 'GET #index' do
     context '認証済みのユーザーとして' do
       it '200レスポンスを返すこと' do
         sign_in @user
@@ -30,7 +30,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET new' do
+  describe 'GET #new' do
     context '認証済みのユーザーとして' do
       it '200レスポンスを返すこと' do
         sign_in @user
@@ -52,7 +52,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'POST create' do
+  describe 'POST #create' do
     context '認証済みのユーザーとして' do
       it '投稿が作成されること' do
         post_params = attributes_for(:post)
@@ -79,7 +79,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET edit' do
+  describe 'GET #edit' do
     context '認証済みのユーザーとして' do
       it '200レスポンスを返すこと' do
         sign_in @user
@@ -101,12 +101,12 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'DELETE destroy' do
+  describe 'DELETE #destroy' do
     context '認証済みのユーザーとして' do
       it 'リクエストが成功すること' do
         sign_in @user
         delete post_url @post
-        expect(response.status).to eq 302
+        expect(response).to have_http_status '302'
       end
 
       it '投稿が削除されること' do
@@ -124,7 +124,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     context '認証していないユーザーとして' do
-      it '投稿が削除されること' do
+      it '投稿が削除されず､投稿数が変わらないこと' do
         expect {
           delete post_url @post
         }.to change(Post, :count).by(0)

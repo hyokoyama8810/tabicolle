@@ -122,5 +122,18 @@ RSpec.describe 'Posts', type: :request do
         expect(response).to redirect_to(request.referer || root_url)
       end
     end
+
+    context '認証していないユーザーとして' do
+      it '投稿が削除されること' do
+        expect {
+          delete post_url @post
+        }.to change(Post, :count).by(0)
+      end
+
+      it 'サインイン画面にリダイレクトすること' do
+        delete post_url @post
+        expect(response).to redirect_to '/users/sign_in'
+      end
+    end
   end
 end

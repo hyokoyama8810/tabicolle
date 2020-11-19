@@ -42,6 +42,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      flash[:notice] = '投稿が編集されました'
       redirect_to current_user
     else
       render action: :edit
@@ -64,14 +65,6 @@ class PostsController < ApplicationController
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
-      # redirect_to posts_url if @post.nil?
-      # flash[:alert] = "他ユーザーの投稿の編集･削除はできません"
-
-      # if @post.nil? && current_user.admin == false
-      #   flash[:alert] = '他ユーザーの投稿の編集･削除はできません'
-      #   redirect_to posts_url
-      # end
-
       redirect_to posts_url, alert: '他ユーザーの投稿の編集･削除はできません' if @post.nil? && current_user.admin == false
     end
 end

@@ -73,6 +73,10 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
+Lint/UselessAssignment:
+  Exclude:
+    - "spec/models/post_spec.rb"
+
 Metrics/AbcSize:
   # Exclude:
   #   - "lib/tasks/dev.rake"

@@ -9,15 +9,14 @@ class PostsController < ApplicationController
     @unfollowing_user_posts = Post.where.not(user_id: current_user.id).paginate(page: params[:page], per_page: 10)
 
     # タグ絞り込み
-    if params[:tag_name]
-      @tag_name_posts = Post.tagged_with(params[:tag_name].to_s).paginate(page: params[:page], per_page: 5)
-    elsif params[:area]
-      @area_posts = Post.where(area: params[:area].to_s).paginate(page: params[:page], per_page: 5)
-    elsif params[:genre]
-      @genre_posts = Post.where(genre: params[:genre].to_s).paginate(page: params[:page], per_page: 5)
-    elsif params[:season]
-      @season_posts = Post.where(season: params[:season].to_s).paginate(page: params[:page], per_page: 5)
-    end
+    key = params.keys.first
+    value = params.values.first
+    @posts = case key
+             when 'tag_name'
+               Post.tagged_with(params[:tag_name]).paginate(page: params[:page], per_page: 5)
+             when 'area', 'genre', 'season'
+               Post.where(key => value).paginate(page: params[:page], per_page: 5)
+             end
   end
 
   def new

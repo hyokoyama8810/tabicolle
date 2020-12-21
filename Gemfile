@@ -36,9 +36,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap-sass'
 
-# Devise
+# Devise + OmniAuth
 gem 'devise'
-gem 'omniauth-twitter'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 
 # paginate
 gem 'bootstrap-will_paginate'

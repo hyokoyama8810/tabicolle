@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable # , :omniauthable, omniauth_providers:[:twitter]
+         :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
   has_many :posts, dependent: :destroy
   has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy # フォロー取得
@@ -32,6 +32,15 @@ class User < ApplicationRecord
     find_or_create_by!(name: 'ゲスト', email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.confirmed_at = Time.zone.now
+    end
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      # deviseのuserカラムに name を追加している場合は以下のコメントアウトも追記します
+      user.name = auth.info.name
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 end

@@ -34,6 +34,7 @@ https://tabicolle.herokuapp.com/
 
 - ユーザーの新規登録･編集機能(Devise)
 - ログイン･ログアウト機能(Devise)
+- Googleアカウントでの認証･ログイン機能(omniauth-google-oauth2)
 - 旅行記録投稿･編集機能
   - タグ機能(acts-as-taggable-on, エリアタグ,ジャンルタグ,シーズンタグ,フリータグ)
   - 画像アップロード機能(ActiveStorage, AmazonS3)
@@ -49,6 +50,12 @@ https://tabicolle.herokuapp.com/
 ### バックエンド
 - Ruby : 2.6.6
 - Rails : 6.0.3.2
+
+#### テストフレームワーク
+- RSpec
+
+#### コード解析･整形ツール
+- RuboCop
 
 ### データベース
 - PostgreSQL(本番環境)

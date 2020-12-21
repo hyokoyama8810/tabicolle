@@ -8,6 +8,11 @@
       <div class="sign_up"><%= link_to "新規登録", new_user_registration_path, class: "btn" %></div>
       <div class="login"><%= link_to "ログイン", new_user_session_path, class: "btn" %></div>
       <div class="guestlogin"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn" %></div>
+      <div class="googlelogin">
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn" do %>
+        <i class="fab fa-google"></i>Googleアカウントでログイン
+      <% end %>
+      </div>
     <% end %>
 
     <div class="about">

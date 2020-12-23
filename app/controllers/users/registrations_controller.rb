@@ -7,5 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path, alert: 'ゲストユーザーは削除できません。' if resource.email == 'guest@example.com'
   end
 
-  def destroy; end
+  def destroy
+    @user = User.find(params[:format])
+    @user.destroy
+    redirect_to root_url, notice: 'アカウントを削除しました｡ またのご利用お待ちしています｡' if @user.destroy
+  end
 end

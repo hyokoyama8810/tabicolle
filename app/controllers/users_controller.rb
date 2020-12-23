@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @posts = @user.posts.paginate(page: params[:page], per_page: 5)
   end
 
-  def edit; end
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def update; end
 

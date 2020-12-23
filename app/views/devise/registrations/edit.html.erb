@@ -40,12 +40,15 @@
     <div class="actions">
       <%= f.submit "更新", class: "btn" %>
     </div>
+
   <% end %>
 
   <div class="withdraw">
-    <h3>アカウント削除</h3>
-    <p>アカウントを削除します  <%= button_to "アカウント消去", registration_path(resource_name), data: { confirm: "本当にアカウントを削除してもよろしいですか?" }, method: :delete, class:"btn" %></p>
+    <h3>Tabicolleから退会する</h3>
+    <p>退会手続きをされますと､アカウントが削除され再びログインできなくなります｡ </p>
+    <%= button_to '退会', user_registration_path(@user), data: { confirm: "本当にアカウントを削除して､退会してもよろしいですか?" },  method: :delete,class:"btn"  %>
   </div>
+
 
   <%= link_to "戻る", :back %>
 

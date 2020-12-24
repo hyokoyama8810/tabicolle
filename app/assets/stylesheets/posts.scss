@@ -175,6 +175,14 @@
     .item {
       display: inline;
       padding-left: 0.5rem;
+      .fa-thumbs-up.already {
+        font-size: 1.2rem;
+        color: #0f7d3b;
+      }
+      .fa-thumbs-up.still {
+        font-size: 1.2rem;
+        color: #b1b9b3;
+      }
     }
   }
 }

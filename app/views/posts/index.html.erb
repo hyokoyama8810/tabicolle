@@ -12,30 +12,31 @@
 
       <% if params[:tag_name] %>
       <p class="search_results"><span class="word"><%= "#{params[:tag_name]}" %></span>のタグがついた投稿</p>
-       <%= render @posts %>
+        <%= render partial: "post", collection: @posts ,locals: {post: @post}  %>
+
 
       <% elsif params[:area] %>
       <p class="search_results"><span class="word"><%= "#{params[:area]}" %></span>の投稿</p>
-      <%= render @posts %>
+        <%= render partial: "post", collection: @posts ,locals: {post: @post} %>
 
       <% elsif params[:genre] %>
       <p class="search_results"><span class="word"><%= "#{params[:genre]}" %></span>の投稿</p>
-      <%= render @posts %>
+        <%= render partial: "post", collection: @posts ,locals: {post: @post} %>
 
       <% elsif params[:season] %>
       <p class="search_results"><span class="word"><%= "#{params[:season]}" %></span>の投稿</p>
-      <%= render @posts %>
+        <%= render partial: "post", collection: @posts ,locals: {post: @post} %>
 
       <% else %>
         <% unless current_user.follower.count == 0 %>
         <h2 class="desc">フォローしているユーザーの投稿</h2>
-        <%= render @following_user_posts %>
+        <%= render partial: "post", collection: @following_user_posts ,locals: {post: @post} %>
         <div class="paginate_wrap">
           <%= will_paginate @following_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
         </div>
         <% else %>
         <h2 class="desc">全ユーザーの投稿 (ユーザーをたくさんフォローしよう!!)</h2>
-        <%= render @unfollowing_user_posts %>
+        <%= render partial: "post", collection: @unfollowing_user_posts ,locals: {post: @post} %>
         <div class="paginate_wrap">
           <%= will_paginate @unfollowing_user_posts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
         </div>

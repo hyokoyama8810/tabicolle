@@ -27,7 +27,10 @@ https://tabicolle.herokuapp.com/
 >
 >C君:どこにする??
 >
->A君:鳥取砂丘とかどう?? (本アプリの鳥取砂丘のタグがついた投稿を見せる)
+>A君:すなば珈琲行ってみたいし､鳥取砂丘とかどう?? (本アプリの鳥取砂丘のタグがついた投稿を見せる)
+>
+>><img src="./app/assets/images/readme03.png" width="400" alt="Tabicolle鳥取砂丘のイメージ図">
+
 >
 >B君,C君:そこにしよう!!
 
@@ -37,7 +40,7 @@ https://tabicolle.herokuapp.com/
 >
 >(京都のタグのついた投稿を見る)
 >
-><img src="./app/assets/images/readme02.png" width="400" alt="Tabicolle京都のイメージ図">
+><img src="./app/assets/images/readme02.png" width="350" alt="Tabicolle京都のイメージ図">
 >
 >Bさん:清水寺に行ってみたいな!
 >

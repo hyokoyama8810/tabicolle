@@ -34,6 +34,9 @@
     </ul>
   </div>
   <div class="bottom_wrap">
+    <div class="item" id="likes_buttons_<%= post.id %>">
+      <%= render partial: 'likes/like', locals: {post: post} %>
+    </div>
     <% if current_user?(post.user) || current_user.admin? %>
     <div class="item">
       <%= link_to "編集", edit_post_path(post) %>

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users, only: [:show]
-  resources :posts, only: %i[index create new edit update destroy]
+  resources :posts, only: %i[index create new edit update destroy] do
+    resource :likes, only: %i[create destroy]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   post 'follow/:id' => 'relationships#follow', :as => 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#unfollow', :as => 'unfollow' # フォロー外す

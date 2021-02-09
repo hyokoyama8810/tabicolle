@@ -24,4 +24,9 @@ RSpec.describe Course, type: :model do
     @course.valid?
     expect(@course.errors[:date]).to include('を入力してください')
   end
+
+  it '最新の投稿が最初に表示されていたら有効になる' do
+    @most_recent = create(:most_recent)
+    expect(@most_recent).to eq Course.first
+  end
 end

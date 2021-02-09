@@ -57,4 +57,9 @@ RSpec.describe User, type: :model do
     @user.valid?
     expect(@user.errors[:password_confirmation]).to include('とパスワードの入力が一致しません')
   end
+
+  it 'ユーザーを削除すると､関連するコース投稿まで一緒に削除されれば有効' do
+    Course.create(title: 'Foobar', general_memo: 'HogeHoge', date: 10.minutes.ago, user_id: @user.id) # [todo] アソシエーションを使わず､user_id属性を直接入れている
+    expect { @user.destroy }.to change(Course, :count).by(-1)
+  end
 end

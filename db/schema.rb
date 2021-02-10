@@ -70,15 +70,6 @@ ActiveRecord::Schema.define(version: 2021_02_08_085607) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "sns_credentials", force: :cascade do |t|
-    t.string "provider", null: false
-    t.string "uid", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
-  end
-
   create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"

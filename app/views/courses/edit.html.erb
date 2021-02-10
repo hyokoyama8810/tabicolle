@@ -1,0 +1,36 @@
+<% provide(:title, "モデルコース編集") %>
+
+<div class="courses">
+  <div class="new row">
+    <h2>モデルコース編集</h2>
+
+    <div class="col-md-2">
+    </div>
+
+    <div class="form_wrap col-md-8">
+      <%= form_for(@course, url: course_path(@course))  do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.label :title, "タイトル" %><em class="mandatory">必須</em><br />
+          <%= f.text_area :title , required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :date, "日付" %><em class="mandatory">必須</em><br />
+          <%= f.date_select :date , required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :general_memo, "メモ" %><br />
+          <%= f.text_area :general_memo  %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新", class: "btn" %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <%= render 'shared/sidebar' %>
+
+  </div>
+</div>

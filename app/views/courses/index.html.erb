@@ -1,0 +1,24 @@
+<h1>Courses#index</h1>
+
+<div>
+  <% @courses.each do |course| %>
+    <p>タイトル : <%= course.title %></p>
+    <p>ユーザー : <%= course.user.name %></p>
+    <p><%= gravatar_for course.user %></p>
+    <p>日付 : <%= course.date %></p>
+    <p>メモ : <%= course.general_memo %></p>
+    <div class="bottom_wrap">
+      <% if current_user?(course.user) || current_user.admin? %>
+      <div class="item">
+        <%= link_to "編集", edit_course_path(course) %>
+      </div>
+      <div class="item">
+        <%= link_to "削除", course, method: :delete, data: { confirm: "モデルコースを削除してもよろしいですか?" } %>
+      </div>
+      <% end %>
+      <div class="item">
+      <%= course.updated_at.to_s(:datetime_jp) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -12,11 +12,11 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
           <%= f.label :title, "タイトル" %><em class="mandatory">必須</em><br />
-          <%= f.text_area :title , required: true %>
+          <%= f.text_field :title , class: "title_box" ,required: true %>
         </div>
         <div class="field">
           <%= f.label :date, "日付" %><em class="mandatory">必須</em><br />
-          <%= f.date_select :date , required: true %>
+          <%= f.date_field :date , value: Time.now.strftime("%Y-%m-%d"), required: true %>
         </div>
         <div class="field">
           <%= f.label :general_memo, "メモ" %><br />

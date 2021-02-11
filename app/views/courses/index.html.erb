@@ -1,24 +1,18 @@
-<h1>Courses#index</h1>
+<% provide(:title, "モデルコース一覧") %>
 
-<div>
-  <% @courses.each do |course| %>
-    <p>タイトル : <%= course.title %></p>
-    <p>ユーザー : <%= course.user.name %></p>
-    <p><%= gravatar_for course.user %></p>
-    <p>日付 : <%= course.date %></p>
-    <p>メモ : <%= course.general_memo %></p>
-    <div class="bottom_wrap">
-      <% if current_user?(course.user) || current_user.admin? %>
-      <div class="item">
-        <%= link_to "編集", edit_course_path(course) %>
-      </div>
-      <div class="item">
-        <%= link_to "削除", course, method: :delete, data: { confirm: "モデルコースを削除してもよろしいですか?" } %>
-      </div>
-      <% end %>
-      <div class="item">
-      <%= course.updated_at.to_s(:datetime_jp) %>
+<div class="courses">
+  <div class="index row">
+
+    <div class="col-md-3">
+    </div>
+
+    <div class="courses_wrap col-md-7">
+      <%= render partial: "course", collection: @courses  %>
+      <div class="paginate_wrap">
+        <%= will_paginate @courses, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
       </div>
     </div>
-  <% end %>
+
+    <%= render 'shared/sidebar' %>
+
 </div>

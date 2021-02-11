@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: %i[destroy edit update]
   def index
-    @courses = Course.all
+    @courses = Course.all.paginate(page: params[:page], per_page: 3)
   end
 
   def new
@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
       flash[:notice] = 'モデルコースが作成されました｡'
       redirect_to courses_url
     else
-      render 'courses/new'
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
       flash[:notice] = 'モデルコースが編集されました'
       redirect_to courses_url
     else
-      render action: :edit
+      render :edit
     end
   end
 
@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
   private
 
     def course_params
-      params.require(:course).permit(:title, :date, :genaral_memo)
+      params.require(:course).permit(:title, :date, :general_memo)
     end
 
     def correct_user

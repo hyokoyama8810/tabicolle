@@ -1,0 +1,33 @@
+<div class="course">
+  <div class="icon_wrap">
+    <div class="icon">
+      <%= link_to gravatar_for(course.user), course.user %>
+    </div>
+    <div class="name">
+      <%= link_to course.user.name, course.user %>
+    </div>
+  </div>
+  <div class="header">
+    <%= "#{course.title} / #{course.date.month}月" %>
+  </div>
+  <% if course.general_memo.present? %>
+  <div class="general_memo">
+    <h2>Memo</h2>
+    <p><%= course.general_memo %></p>
+  </div>
+  <% end %>
+  <div class="bottom_wrap">
+
+    <% if current_user?(course.user) || current_user.admin? %>
+    <div class="item">
+      <%= link_to "編集", edit_course_path(course) %>
+    </div>
+    <div class="item">
+      <%= link_to "削除", course, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" } %>
+    </div>
+    <% end %>
+    <div class="item">
+      <%= course.updated_at.to_s(:datetime_jp) %>
+    </div>
+  </div>
+</div>

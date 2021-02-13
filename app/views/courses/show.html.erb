@@ -1,0 +1,15 @@
+<% provide(:title, "#{@course.title}") %>
+
+<div class="courses">
+  <div class="index row">
+
+    <div class="col-md-3">
+    </div>
+
+    <div class="courses_wrap col-md-7">
+      <%= render @course  %>
+    </div>
+
+    <%= render 'shared/sidebar' %>
+
+</div>

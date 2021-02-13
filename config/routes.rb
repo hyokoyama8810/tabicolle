@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   post 'follow/:id' => 'relationships#follow', :as => 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#unfollow', :as => 'unfollow' # フォロー外す
 
-  resources :courses, only: %i[index create new edit update destroy]
+  resources :courses
 end

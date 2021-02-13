@@ -14,7 +14,7 @@ RSpec.describe 'Posts', type: :feature do
     expect(page).to have_content 'ログインしました。'
     # create
     expect {
-      click_on '新規投稿', match: :first
+      click_on '新規メモ投稿', match: :first
       fill_in '投稿内容', with: '東京スカイツリーに行ってきた!!'
       select '関東', from: 'エリア'
       select '観光･散策', from: 'ジャンル'

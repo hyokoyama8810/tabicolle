@@ -30,6 +30,28 @@ RSpec.describe 'Courses', type: :request do
     end
   end
 
+  describe 'GET #show' do
+    context '認証済みのユーザーとして' do
+      it '200レスポンスを返すこと' do
+        sign_in @user
+        get course_path(@course.id)
+        expect(response).to have_http_status '200'
+      end
+    end
+
+    context '認証していないユーザーとして' do
+      it '302レスポンスを返すこと' do
+        get course_path(@course.id)
+        expect(response).to have_http_status '302'
+      end
+
+      it 'サインイン画面にリダイレクトされること' do
+        get course_path(@course.id)
+        expect(response).to redirect_to '/users/sign_in'
+      end
+    end
+  end
+
   describe 'GET #new' do
     context '認証済みのユーザーとして' do
       it '200レスポンスを返すこと' do
@@ -119,7 +141,7 @@ RSpec.describe 'Courses', type: :request do
       it 'ユーザー一覧にリダイレクトすること' do
         sign_in @user
         delete course_url @course
-        expect(response).to redirect_to(request.referer || root_url)
+        expect(response).to redirect_to(courses_url)
       end
     end
 

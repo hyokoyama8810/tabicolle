@@ -7,7 +7,27 @@
     </div>
 
     <div class="courses_wrap col-md-7">
+    <!--
       <%= render partial: "course", collection: @courses  %>
+    -->
+
+
+      <% @courses.each do |course| %>
+        <div class="course">
+          <div class="icon_wrap">
+            <div class="icon">
+              <%= link_to gravatar_for(course.user), course.user %>
+            </div>
+            <div class="name">
+              <%= link_to course.user.name, course.user %>
+            </div>
+          </div>
+          <div class="header">
+            <%= link_to "#{course.title} / #{course.date.month}月", course_path(course.id) %>
+          </div>
+        </div>
+      <% end %>
+
       <div class="paginate_wrap">
         <%= will_paginate @courses, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>　
       </div>

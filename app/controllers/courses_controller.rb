@@ -7,6 +7,10 @@ class CoursesController < ApplicationController
     @courses = Course.all.paginate(page: params[:page], per_page: 3)
   end
 
+  def show
+    @course = Course.find(params[:id])
+  end
+
   def new
     @course = Course.new
   end
@@ -29,7 +33,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     if @course.update(course_params)
       flash[:notice] = 'モデルコースが編集されました'
-      redirect_to courses_url
+      redirect_to course_url
     else
       render :edit
     end
@@ -38,8 +42,8 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
-    flash[:notice] = '投稿を削除しました'
-    redirect_to request.referer || root_url
+    flash[:notice] = 'モデルコースを削除しました'
+    redirect_to courses_url
     # [todo] 投稿詳細ページからのdestroyリクエスト後は､前ページにリダイレクトするのではなく､一覧ページに移動するようにしたい｡
   end
 

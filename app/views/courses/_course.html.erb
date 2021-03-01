@@ -10,14 +10,22 @@
   <div class="header">
     <%= "#{course.title} / #{course.date.month}月" %>
   </div>
-  <% if course.general_memo.present? %>
-  <div class="general_memo">
-    <h2>Memo</h2>
-    <p><%= course.general_memo %></p>
+  <div class="logs">
+    <% course.logs.each do |log| %>
+    <div class="log">
+      <div class="spot">
+        <%= "#{log.spot} / #{log.time}" %>
+      </div>
+      <% if log.detailed_memo.present? %>
+      <div class="detailed_memo">
+        <%= log.detailed_memo %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-  <div class="bottom_wrap">
 
+  <div class="bottom_wrap">
     <% if current_user?(course.user) || current_user.admin? %>
     <div class="item">
       <%= link_to "編集", edit_course_path(course) %>

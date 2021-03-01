@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_085607) do
+ActiveRecord::Schema.define(version: 2021_02_27_001651) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2021_02_08_085607) do
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.string "spot"
+    t.time "time"
+    t.string "detailed_memo"
+    t.integer "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_logs_on_course_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -124,6 +134,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_085607) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
+  add_foreign_key "logs", "courses"
   add_foreign_key "posts", "users"
   add_foreign_key "taggings", "tags"
 end

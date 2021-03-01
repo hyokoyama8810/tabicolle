@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
   private
 
     def course_params
-      params.require(:course).permit(:title, :date, :general_memo)
+      params.require(:course).permit(:title, :date, :general_memo, logs_attributes: %i[spot time detailed_memo _destroy])
     end
 
     def correct_user

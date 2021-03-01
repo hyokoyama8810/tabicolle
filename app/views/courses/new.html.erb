@@ -18,6 +18,17 @@
           <%= f.label :date, "日付" %><em class="mandatory">必須</em><br />
           <%= f.date_field :date , value: Time.now.strftime("%Y-%m-%d"), required: true %>
         </div>
+
+        <h3>旅行スポット</h3>
+        <div id="logs">
+          <%= f.fields_for :logs do |log| %>
+            <%= render 'log_fields', :f => log %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association '旅行スポットの追加', f, :logs %>
+          </div>
+        </div>
+
         <div class="field">
           <%= f.label :general_memo, "メモ" %><br />
           <%= f.text_area :general_memo  %>

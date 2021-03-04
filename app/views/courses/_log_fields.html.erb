@@ -13,6 +13,11 @@
     <%= f.label :detailed_memo, "メモ" %><br />
     <%= f.text_field :detailed_memo, placeholder: "◯◯まで徒歩●分のところにあります｡" %>
   </div>
+  <div class="field log_image_field">
+    <%= f.label :image, "写真" %><br />
+    <%= f.file_field :log_image, accept: "image/jpeg,image/gif,image/png"  %>
+  </div>
+
   <div class='links'>
     <%= link_to_remove_association '削除', f %>
   </div>

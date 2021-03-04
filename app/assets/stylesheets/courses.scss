@@ -156,15 +156,27 @@
         font-weight: bold;
         margin-bottom: 0.5rem;
       }
-      .detailed_memo {
-        font-size: 1.2rem;
+      .image_memo_wrap {
+        display: flex;
+        .log_image {
+          padding-right: 1rem;
+          flex-basis: 50%;
+          img {
+            width: 100%;
+          }
+        }
+        .detailed_memo {
+          flex-basis: 50%;
+          font-size: 1rem;
+        }
       }
     }
   }
   .general_memo {
     margin: 0 0 1rem 5rem;
+    font-size: 1rem;
     h2 {
-      font-size: 0.8rem;
+      font-size: 1.2rem;
       font-weight: normal;
     }
   }

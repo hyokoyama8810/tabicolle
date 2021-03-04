@@ -19,14 +19,26 @@
         <%= " #{log.time.strftime("%H:%M")}" %>
         <% end %>
       </div>
-      <% if log.detailed_memo.present? %>
-      <div class="detailed_memo">
-        <%= log.detailed_memo %>
+      <div class="image_memo_wrap">
+        <div class="log_image">
+          <%= image_tag log.log_image.variant(resize: "280x280") if log.log_image.attached? %>
+        </div>
+        <% if log.detailed_memo.present? %>
+        <div class="detailed_memo">
+          <%= log.detailed_memo %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
     <% end %>
   </div>
+
+  <% if course.general_memo.present? %>
+  <div class="general_memo">
+    <h2>メモ</h2>
+    <%= course.general_memo %>
+  </div>
+  <% end %>
 
   <div class="bottom_wrap">
     <% if current_user?(course.user) || current_user.admin? %>

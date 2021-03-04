@@ -66,6 +66,41 @@
           height: 5rem;
         }
       }
+      #logs {
+        padding-bottom: 1.5rem;
+        .nested-fields {
+          margin-bottom: 1rem;
+          .field {
+            padding-bottom: 0.5rem;
+            label {
+              margin-bottom: 0.5rem;
+            }
+          }
+          .spot_time_wrap {
+            display: flex;
+          }
+          .detailed_memo_field {
+            input {
+              display: block;
+              width: 100%;
+            }
+          }
+          .remove_fields {
+            background-color: #0f7d3b;
+            color: #fff;
+            padding: 0.2rem;
+            border-radius: 5px;
+          }
+        }
+        .links {
+          .add_fields {
+            background-color: #0f7d3b;
+            color: #fff;
+            padding: 0.2rem;
+            border-radius: 5px;
+          }
+        }
+      }
       .actions {
         text-align: center;
         .btn {
@@ -109,8 +144,22 @@
   .header {
     font-size: 1.4rem;
     font-weight: bold;
-    margin: 0 0 1rem 5rem;
     word-break: break-all;
+    margin: 0 0 2rem 5rem;
+  }
+  .logs {
+    margin: 0 0 1rem 5rem;
+    .log {
+      margin-bottom: 1.5rem;
+      .spot {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .detailed_memo {
+        font-size: 1.2rem;
+      }
+    }
   }
   .general_memo {
     margin: 0 0 1rem 5rem;

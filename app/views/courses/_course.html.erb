@@ -14,7 +14,10 @@
     <% course.logs.each do |log| %>
     <div class="log">
       <div class="spot">
-        <%= "#{log.spot} / #{log.time}" %>
+        <%= log.spot %>
+        <% if log.time.present? %>
+        <%= " #{log.time.strftime("%H:%M")}" %>
+        <% end %>
       </div>
       <% if log.detailed_memo.present? %>
       <div class="detailed_memo">

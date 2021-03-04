@@ -1,0 +1,56 @@
+<div class="course">
+  <div class="icon_wrap">
+    <div class="icon">
+      <%= link_to gravatar_for(course.user), course.user %>
+    </div>
+    <div class="name">
+      <%= link_to course.user.name, course.user %>
+    </div>
+  </div>
+  <div class="header">
+    <%= "#{course.title} / #{course.date.month}月" %>
+  </div>
+  <div class="logs">
+    <% course.logs.each do |log| %>
+    <div class="log">
+      <div class="spot">
+        <%= log.spot %>
+        <% if log.time.present? %>
+        <%= " #{log.time.strftime("%H:%M")}" %>
+        <% end %>
+      </div>
+      <div class="image_memo_wrap">
+        <div class="log_image">
+          <%= image_tag log.log_image.variant(resize: "280x280") if log.log_image.attached? %>
+        </div>
+        <% if log.detailed_memo.present? %>
+        <div class="detailed_memo">
+          <%= log.detailed_memo %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <% if course.general_memo.present? %>
+  <div class="general_memo">
+    <h2>メモ</h2>
+    <%= course.general_memo %>
+  </div>
+  <% end %>
+
+  <div class="bottom_wrap">
+    <% if current_user?(course.user) || current_user.admin? %>
+    <div class="item">
+      <%= link_to "編集", edit_course_path(course) %>
+    </div>
+    <div class="item">
+      <%= link_to "削除", course, method: :delete, data: { confirm: "モデルコースを削除してもよろしいですか?" } %>
+    </div>
+    <% end %>
+    <div class="item">
+      <%= course.updated_at.to_s(:datetime_jp) %>
+    </div>
+  </div>
+</div>

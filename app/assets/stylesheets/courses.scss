@@ -1,0 +1,198 @@
+.courses {
+  .index {
+    .paginate_wrap {
+      text-align: center;
+      .pagination {
+        li {
+          a {
+            color: #0f7d3b;
+          }
+        }
+        li.active {
+          a {
+            background-color: #0f7d3b;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .new {
+    h2 {
+      font-size: 2rem;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    form {
+      padding: 1rem 10%;
+      #error_explanation {
+        h2 {
+          font-size: 1rem;
+          color: #ff0000;
+          font-weight: bold;
+          background: #fff;
+        }
+        ul {
+          font-size: 1rem;
+          color: #f00;
+          background: rgba(255, 0, 0, 0.1);
+          padding: 0.5rem;
+          border: 1px solid #f00;
+          border-radius: 5px;
+          font-size: 0.8rem;
+          list-style: square inside;
+        }
+      }
+      .field {
+        padding-bottom: 1.5rem;
+        label {
+          margin-bottom: 0.5rem;
+        }
+        .mandatory {
+          margin-left: 1rem;
+          color: #fff;
+          background-color: red;
+          padding: 2px;
+          border-radius: 2px;
+          font-style: normal;
+          font-size: 0.7rem;
+        }
+        .title_box {
+          width: 100%;
+          height: 2rem;
+        }
+        textarea {
+          width: 100%;
+          height: 5rem;
+        }
+      }
+      #logs {
+        padding-bottom: 1.5rem;
+        .nested-fields {
+          margin-bottom: 1rem;
+          .field {
+            padding-bottom: 0.5rem;
+            label {
+              margin-bottom: 0.5rem;
+            }
+          }
+          .spot_time_wrap {
+            display: flex;
+          }
+          .detailed_memo_field {
+            input {
+              display: block;
+              width: 100%;
+            }
+          }
+          .remove_fields {
+            background-color: #0f7d3b;
+            color: #fff;
+            padding: 0.2rem;
+            border-radius: 5px;
+          }
+        }
+        .links {
+          .add_fields {
+            background-color: #0f7d3b;
+            color: #fff;
+            padding: 0.2rem;
+            border-radius: 5px;
+          }
+        }
+      }
+      .actions {
+        text-align: center;
+        .btn {
+          background: #0f7d3b;
+          color: #fff;
+          transition: all 0.3s ease 0s;
+          &:hover {
+            opacity: 0.6;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 部分テンプレート
+//// _course.html.erb
+.course {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  .icon_wrap {
+    display: flex;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    .icon {
+      width: auto;
+      padding-right: 1rem;
+      .gravatar {
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+    .name {
+      font-size: 1.2rem;
+    }
+  }
+  .header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    word-break: break-all;
+    margin: 0 0 2rem 5rem;
+  }
+  .logs {
+    margin: 0 0 1rem 5rem;
+    .log {
+      margin-bottom: 1.5rem;
+      .spot {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .image_memo_wrap {
+        display: flex;
+        .log_image {
+          padding-right: 1rem;
+          flex-basis: 50%;
+          img {
+            width: 100%;
+          }
+        }
+        .detailed_memo {
+          flex-basis: 50%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .general_memo {
+    margin: 0 0 1rem 5rem;
+    font-size: 1rem;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+  }
+  .bottom_wrap {
+    text-align: right;
+    .item {
+      display: inline;
+      padding-left: 0.5rem;
+      .fa-thumbs-up.already {
+        font-size: 1.2rem;
+        color: #0f7d3b;
+      }
+      .fa-thumbs-up.still {
+        font-size: 1.2rem;
+        color: #b1b9b3;
+      }
+    }
+  }
+}

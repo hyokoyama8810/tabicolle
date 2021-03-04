@@ -1,0 +1,24 @@
+<div class='nested-fields'>
+  <div class="spot_time_wrap">
+    <div class="field spot_field">
+      <%= f.label :spot, "旅行スポット" %><br />
+      <%= f.text_field :spot, placeholder:  "【◯◯市】◯◯駅"  %>
+    </div>
+    <div class="field time_field">
+      <%= f.label :time, "時刻" %><br />
+      <%= f.time_field :time %>
+    </div>
+  </div>
+  <div class="field detailed_memo_field">
+    <%= f.label :detailed_memo, "メモ" %><br />
+    <%= f.text_field :detailed_memo, placeholder: "◯◯まで徒歩●分のところにあります｡" %>
+  </div>
+  <div class="field log_image_field">
+    <%= f.label :image, "写真" %><br />
+    <%= f.file_field :log_image, accept: "image/jpeg,image/gif,image/png"  %>
+  </div>
+
+  <div class='links'>
+    <%= link_to_remove_association '削除', f %>
+  </div>
+</div>

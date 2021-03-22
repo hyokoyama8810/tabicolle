@@ -8,14 +8,17 @@ https://tabicolle.herokuapp.com/
 
 ## イメージ図
 
+![Tabicolleのイメージ図](./app/assets/images/readme04.png "Tabicolleのイメージ図")
 ![Tabicolleのイメージ図](./app/assets/images/readme01.png "Tabicolleのイメージ図")
+
 
 ## 概要
 
-**Tabicolleは,旅行好きたちが旅の思い出を残したり,次なる旅行先を探すことを助けるアプリケーションです.**
+**Tabicolleは,すべての人が貴重な時間を浪費せず､時間を楽しい旅行に出会うことのできるアプリケーションです.**
 
 1. 日記感覚で旅行を記録することで何度でも旅の思い出が蘇ります｡
 2. 新しい旅行のプランが見つかります｡
+3. モデルコースを見ることで､当日のイメージが湧きます｡
 
 ## 使用例
 
@@ -54,7 +57,7 @@ https://tabicolle.herokuapp.com/
 - ユーザーの新規登録･編集機能(Devise)
 - ログイン･ログアウト機能(Devise)
 - Googleアカウントでの認証･ログイン機能(omniauth-google-oauth2)
-- 旅行記録投稿･編集機能
+- 旅行記録投稿･編集機能･モデルコース投稿機能
   - タグ機能(acts-as-taggable-on, エリアタグ,ジャンルタグ,シーズンタグ,フリータグ)
   - 画像アップロード機能(ActiveStorage, AmazonS3)
   - フォロー､フォロワー機能

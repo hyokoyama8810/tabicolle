@@ -7,8 +7,8 @@ User.create!(
   confirmed_at: Time.now
 )
 User.create!(
-  email: 'yokohaya1027@gmail.com',
-  name: '横山 隼',
+  email: ENV['GMAIL_ADDRESS'],
+  name: 'SAMPLE USER',
   password: 'password',
   password_confirmation: 'password',
   admin: 'true',

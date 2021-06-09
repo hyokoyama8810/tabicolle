@@ -39,7 +39,7 @@ RSpec.describe 'Courses', type: :feature do
     fill_in 'タイトル', with: '金沢･富山･福井 北陸観光･散策モデルコース'
     fill_in '日付', with: '2021/02/01'
     fill_in 'メモ', with: '冬の北陸はかなり寒いので､暖かい格好と滑りにくい靴を準備することをおすすめします｡'
-    click_on '更新'
+    click_on '投稿'
 
     expect(page).to have_current_path '/courses/1'
     expect(page).to have_content '冬の北陸はかなり寒いので､暖かい格好と滑りにくい靴を準備することをおすすめします｡'
